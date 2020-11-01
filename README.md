@@ -11,6 +11,7 @@ The original output can be generated with:
 konstrukt gen shining
 ```
 Resulting in this image:
+
 ![Shining](samples/shining.svg)
 
 Changing the colors can be easily done like this:
@@ -18,4 +19,5 @@ Changing the colors can be easily done like this:
 konstrukt gen shining --foreground "#2c2c54" --background "#d1ccc0" --accent "#ffb142" --filename shining-spanish.svg
 ```
 Resulting in this image:
+
 ![Shining Spanish color inspiration](samples/shining-spanish.svg)
