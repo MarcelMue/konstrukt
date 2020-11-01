@@ -26,7 +26,7 @@ konstrukt gen shining --foreground "#2c2c54" --background "#d1ccc0" --accent "#f
 
 ### Interruptions
 
-The pattern and default implementation is inspired by [Horst Bartnigs](https://de.wikipedia.org/wiki/Horst_Bartnig) works title `72 Unterbrechungen`.
+The pattern and default implementation is inspired by [Horst Bartnigs](https://de.wikipedia.org/wiki/Horst_Bartnig) collection of works titled `72 Unterbrechungen`.
 
 The default can be generated with:
 ```
