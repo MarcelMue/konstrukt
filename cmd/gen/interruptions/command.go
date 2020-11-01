@@ -1,4 +1,4 @@
-package gen
+package interruptions
 
 import (
 	"io"
@@ -7,14 +7,11 @@ import (
 	"github.com/giantswarm/microerror"
 	"github.com/giantswarm/micrologger"
 	"github.com/spf13/cobra"
-
-	"github.com/marcelmue/konstrukt/cmd/gen/interruptions"
-	"github.com/marcelmue/konstrukt/cmd/gen/shining"
 )
 
 const (
-	name        = "gen"
-	description = "Generate files."
+	name        = "interruptions"
+	description = "Draws a rough interpretation of Horst Bartnigs '72 Unterbrechungen'."
 )
 
 type Config struct {
@@ -34,36 +31,6 @@ func New(config Config) (*cobra.Command, error) {
 		config.Stdout = os.Stdout
 	}
 
-	var err error
-
-	var shiningCmd *cobra.Command
-	{
-		c := shining.Config{
-			Logger: config.Logger,
-			Stderr: config.Stderr,
-			Stdout: config.Stdout,
-		}
-
-		shiningCmd, err = shining.New(c)
-		if err != nil {
-			return nil, microerror.Mask(err)
-		}
-	}
-
-	var interruptionsCmd *cobra.Command
-	{
-		c := interruptions.Config{
-			Logger: config.Logger,
-			Stderr: config.Stderr,
-			Stdout: config.Stdout,
-		}
-
-		interruptionsCmd, err = interruptions.New(c)
-		if err != nil {
-			return nil, microerror.Mask(err)
-		}
-	}
-
 	f := &flag{}
 
 	r := &runner{
@@ -81,9 +48,6 @@ func New(config Config) (*cobra.Command, error) {
 	}
 
 	f.Init(c)
-
-	c.AddCommand(shiningCmd)
-	c.AddCommand(interruptionsCmd)
 
 	return c, nil
 }
