@@ -41,3 +41,21 @@ konstrukt gen interruptions --color1 "#00a8ff" --color2 "#2f3640" --color3 "#fbc
 ```
 
 ![Interruptions British color inspiration](samples/interruptions-british.svg)
+
+### Quadrat
+
+The pattern and default implementation is inspired by [Horst Bartnigs](https://de.wikipedia.org/wiki/Horst_Bartnig) work titled `8 blaue und 8 schwarze Quadrate`.
+
+The default can be generated with:
+```
+konstrukt gen quadrat
+```
+
+![Quadrat](samples/quadrat.svg)
+
+Changing the colors can be easily done like this:
+```
+konstrukt gen quadrat --color1 "#f6b93b" --color2 "#38ada9"  --filename quadrat-french.svg
+```
+
+![Quadrat French color inspiration](samples/quadrat-french.svg)

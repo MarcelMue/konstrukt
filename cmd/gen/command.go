@@ -9,6 +9,7 @@ import (
 	"github.com/spf13/cobra"
 
 	"github.com/marcelmue/konstrukt/cmd/gen/interruptions"
+	"github.com/marcelmue/konstrukt/cmd/gen/quadrat"
 	"github.com/marcelmue/konstrukt/cmd/gen/shining"
 )
 
@@ -64,6 +65,20 @@ func New(config Config) (*cobra.Command, error) {
 		}
 	}
 
+	var quadratCmd *cobra.Command
+	{
+		c := quadrat.Config{
+			Logger: config.Logger,
+			Stderr: config.Stderr,
+			Stdout: config.Stdout,
+		}
+
+		quadratCmd, err = quadrat.New(c)
+		if err != nil {
+			return nil, microerror.Mask(err)
+		}
+	}
+
 	f := &flag{}
 
 	r := &runner{
@@ -84,6 +99,7 @@ func New(config Config) (*cobra.Command, error) {
 
 	c.AddCommand(shiningCmd)
 	c.AddCommand(interruptionsCmd)
+	c.AddCommand(quadratCmd)
 
 	return c, nil
 }
