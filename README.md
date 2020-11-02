@@ -10,6 +10,9 @@ This sections shows example usage of the implemented commands.
 
 The pattern of the carpet in the shining (code initially implemented [here](https://github.com/ajstarks/svgo-workshop/blob/master/code/svgplay-samples/shining.go)) can be easily generated and recolored with konstrukt.
 
+<details>
+<summary>Usage examples</summary>
+
 The original output can be generated with:
 ```
 konstrukt gen shining
@@ -24,9 +27,14 @@ konstrukt gen shining --foreground "#2c2c54" --background "#d1ccc0" --accent "#f
 
 ![Shining Spanish color inspiration](samples/shining-spanish.svg)
 
+</details>
+
 ### Interruptions
 
 The pattern and default implementation is inspired by [Horst Bartnigs](https://de.wikipedia.org/wiki/Horst_Bartnig) collection of works titled `72 Unterbrechungen`.
+
+<details>
+<summary>Usage examples</summary>
 
 The default can be generated with:
 ```
@@ -42,9 +50,14 @@ konstrukt gen interruptions --color1 "#00a8ff" --color2 "#2f3640" --color3 "#fbc
 
 ![Interruptions British color inspiration](samples/interruptions-british.svg)
 
+</details>
+
 ### Quadrat
 
 The pattern and default implementation is inspired by [Horst Bartnigs](https://de.wikipedia.org/wiki/Horst_Bartnig) work titled `8 blaue und 8 schwarze Quadrate`.
+
+<details>
+<summary>Usage examples</summary>
 
 The default can be generated with:
 ```
@@ -59,3 +72,28 @@ konstrukt gen quadrat --color1 "#f6b93b" --color2 "#38ada9"  --filename quadrat-
 ```
 
 ![Quadrat French color inspiration](samples/quadrat-french.svg)
+
+</details>
+
+### Janein
+
+The pattern and default implementation is inspired by [Wolfgang Bosses](https://kulturanalyse.de//wolfgang_bosse/index.html) work titled `JA-NEIN`.
+
+<details>
+<summary>Usage examples</summary>
+
+The default can be generated with:
+```
+konstrukt gen janein
+```
+
+![Janein](samples/janein.svg)
+
+Changing the colors can be easily done like this:
+```
+konstrukt gen janein --color1 "#ced6e0" --color2 "#ffa502"  --filename janein-cn.svg
+```
+
+![Janein CN color inspiration](samples/janein-cn.svg)
+
+</details>
