@@ -8,6 +8,7 @@ import (
 	"github.com/giantswarm/micrologger"
 	"github.com/spf13/cobra"
 
+	"github.com/marcelmue/konstrukt/cmd/gen/fiftyfive"
 	"github.com/marcelmue/konstrukt/cmd/gen/interruptions"
 	"github.com/marcelmue/konstrukt/cmd/gen/janein"
 	"github.com/marcelmue/konstrukt/cmd/gen/quadrat"
@@ -94,6 +95,20 @@ func New(config Config) (*cobra.Command, error) {
 		}
 	}
 
+	var fiftyfiveCmd *cobra.Command
+	{
+		c := fiftyfive.Config{
+			Logger: config.Logger,
+			Stderr: config.Stderr,
+			Stdout: config.Stdout,
+		}
+
+		fiftyfiveCmd, err = fiftyfive.New(c)
+		if err != nil {
+			return nil, microerror.Mask(err)
+		}
+	}
+
 	f := &flag{}
 
 	r := &runner{
@@ -116,6 +131,7 @@ func New(config Config) (*cobra.Command, error) {
 	c.AddCommand(interruptionsCmd)
 	c.AddCommand(quadratCmd)
 	c.AddCommand(janeinCmd)
+	c.AddCommand(fiftyfiveCmd)
 
 	return c, nil
 }

@@ -97,3 +97,26 @@ konstrukt gen janein --color1 "#ced6e0" --color2 "#ffa502"  --filename janein-cn
 ![Janein CN color inspiration](samples/janein-cn.svg)
 
 </details>
+
+### Fiftyfive
+
+The pattern and default implementation is inspired by [Julia Breunigs](https://juliaskonkretekunst.wordpress.com/) work titled `Bild Nr. 55`.
+
+<details>
+<summary>Usage examples</summary>
+
+The default can be generated with:
+```
+konstrukt gen fiftyfive
+```
+
+![Fiftyfive](samples/fiftyfive.svg)
+
+Changing the colors can be easily done like this:
+```
+konstrukt gen fiftyfive --color1 "#cd84f1" --color2 "#4b4b4b" --color3 "#ffaf40"  --filename fiftyfive-tr.svg
+```
+
+![Fiftyfive TR color inspiration](samples/fiftyfive-tr.svg)
+
+</details>
