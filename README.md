@@ -140,6 +140,6 @@ Changing the colors can be easily done like this:
 konstrukt gen ladysweat --color1 "#303952" --color2 "#f8a5c2" --color3 "#778beb"  --filename ladysweat-ru.svg
 ```
 
-![Ladysweat RU color inspiration](samples/ladysweat-tr.svg)
+![Ladysweat RU color inspiration](samples/ladysweat-ru.svg)
 
 </details>
