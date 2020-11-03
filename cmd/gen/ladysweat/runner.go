@@ -1,4 +1,4 @@
-package fiftyfive
+package ladysweat
 
 import (
 	"context"
@@ -49,12 +49,12 @@ func (r *runner) run(ctx context.Context, cmd *cobra.Command, args []string) err
 
 	canvas.Rect(0, 0, width, height, "fill:"+c1)
 
+	// Skewed rectangle
+	xp := []int{50, 70, 80, 60}
+	yp := []int{50, 50, 30, 30}
 	// Polygon
-	xp := []int{0, 80, 100, 80, 80}
-	yp := []int{80, 100, 80, 0, 80}
-	// Triangle
-	xt := []int{0, 80, 80}
-	yt := []int{80, 80, 0}
+	xt := []int{45, 80, 85, 70, 80, 60}
+	yt := []int{30, 30, 20, 20, 0, 0}
 
 	canvas.Def()
 	canvas.Gid("unit1")
@@ -65,11 +65,27 @@ func (r *runner) run(ctx context.Context, cmd *cobra.Command, args []string) err
 	canvas.Gend()
 	canvas.DefEnd()
 
-	for x := 0; x < width; x += 100 {
-		for y := 0; y < height; y += 100 {
-			canvas.Use(x, y, "#unit1", "fill:"+c2)
-			canvas.Use(x, y, "#unit2", "fill:"+c3)
+	ypositioncounter := 0
+	for x := -45; x < width; x += 35 {
+		for y := 0; y-60 < height; y += 60 {
+			if ypositioncounter%4 == 0 {
+				canvas.Use(x, y, "#unit1", "fill:"+c2)
+				canvas.Use(x, y, "#unit2", "fill:"+c3)
+			}
+			if ypositioncounter%4 == 1 {
+				canvas.Use(x, y-15, "#unit1", "fill:"+c2)
+				canvas.Use(x, y-15, "#unit2", "fill:"+c3)
+			}
+			if ypositioncounter%4 == 2 {
+				canvas.Use(x, y-30, "#unit1", "fill:"+c2)
+				canvas.Use(x, y-30, "#unit2", "fill:"+c3)
+			}
+			if ypositioncounter%4 == 3 {
+				canvas.Use(x, y-45, "#unit1", "fill:"+c2)
+				canvas.Use(x, y-45, "#unit2", "fill:"+c3)
+			}
 		}
+		ypositioncounter++
 	}
 	canvas.End()
 

@@ -120,3 +120,26 @@ konstrukt gen fiftyfive --color1 "#cd84f1" --color2 "#4b4b4b" --color3 "#ffaf40"
 ![Fiftyfive TR color inspiration](samples/fiftyfive-tr.svg)
 
 </details>
+
+### Ladysweat
+
+The pattern and default implementation is inspired by [Joshua Blankenships](https://blankenship.xyz/) work titled `Lady Sweat Repeating Pattern`.
+
+<details>
+<summary>Usage examples</summary>
+
+The default can be generated with:
+```
+konstrukt gen ladysweat
+```
+
+![Ladysweat](samples/ladysweat.svg)
+
+Changing the colors can be easily done like this:
+```
+konstrukt gen ladysweat --color1 "#303952" --color2 "#f8a5c2" --color3 "#778beb"  --filename ladysweat-ru.svg
+```
+
+![Ladysweat RU color inspiration](samples/ladysweat-tr.svg)
+
+</details>
