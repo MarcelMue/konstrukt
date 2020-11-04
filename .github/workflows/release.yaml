@@ -8,7 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        # build and publish in parallel: linux/386, linux/amd64, windows/386, windows/amd64, darwin/386, darwin/amd64
         goos: [linux, windows, darwin]
         goarch: [amd64]
     steps:
