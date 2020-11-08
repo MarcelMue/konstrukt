@@ -144,6 +144,29 @@ konstrukt gen ladysweat --color1 "#303952" --color2 "#f8a5c2" --color3 "#778beb"
 
 </details>
 
+### Modernhive
+
+The pattern and default implementation is inspired by [Emma Methods](http://www.emmamethod.com/) work titled `modern hive`.
+
+<details>
+<summary>Usage examples</summary>
+
+The default can be generated with:
+```
+konstrukt gen modernhive
+```
+
+![Modernhive](samples/modernhive.svg)
+
+Changing the colors can be easily done like this:
+```
+konstrukt gen modernhive --color1 "#B33771" --color2 "#55E6C1"  --filename modernhive-in.svg
+```
+
+![Modernhive RU color inspiration](samples/modernhive-in.svg)
+
+</details>
+
 ## Guidelines
 
 Additions to this project should follow these guidelines:

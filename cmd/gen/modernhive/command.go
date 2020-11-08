@@ -1,4 +1,4 @@
-package ladysweat
+package modernhive
 
 import (
 	"io"
@@ -10,8 +10,8 @@ import (
 )
 
 const (
-	name        = "ladysweat"
-	description = "Draws a rough interpretation of Joshua Blankenships 'Lady Sweat Repeating Pattern'."
+	name        = "modernhive"
+	description = "Draws a rough interpretation of Emma Methods 'modern hive'."
 )
 
 type Config struct {
