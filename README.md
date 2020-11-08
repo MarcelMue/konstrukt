@@ -143,3 +143,11 @@ konstrukt gen ladysweat --color1 "#303952" --color2 "#f8a5c2" --color3 "#778beb"
 ![Ladysweat RU color inspiration](samples/ladysweat-ru.svg)
 
 </details>
+
+## Guidelines
+
+Additions to this project should follow these guidelines:
+- Patterns should be repeatable and scaleable.
+- Patterns should be constant across the generated SVG (e.g. no convex pattern).
+- All patterns should be made up of low count polygons (no curves or similar).
+- Accurate citation should be given if a pattern was inspired by an artwork or artist.
