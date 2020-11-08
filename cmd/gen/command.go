@@ -12,6 +12,7 @@ import (
 	"github.com/marcelmue/konstrukt/cmd/gen/interruptions"
 	"github.com/marcelmue/konstrukt/cmd/gen/janein"
 	"github.com/marcelmue/konstrukt/cmd/gen/ladysweat"
+	"github.com/marcelmue/konstrukt/cmd/gen/modernhive"
 	"github.com/marcelmue/konstrukt/cmd/gen/quadrat"
 	"github.com/marcelmue/konstrukt/cmd/gen/shining"
 )
@@ -124,6 +125,20 @@ func New(config Config) (*cobra.Command, error) {
 		}
 	}
 
+	var modernhiveCmd *cobra.Command
+	{
+		c := modernhive.Config{
+			Logger: config.Logger,
+			Stderr: config.Stderr,
+			Stdout: config.Stdout,
+		}
+
+		modernhiveCmd, err = modernhive.New(c)
+		if err != nil {
+			return nil, microerror.Mask(err)
+		}
+	}
+
 	f := &flag{}
 
 	r := &runner{
@@ -148,6 +163,7 @@ func New(config Config) (*cobra.Command, error) {
 	c.AddCommand(janeinCmd)
 	c.AddCommand(fiftyfiveCmd)
 	c.AddCommand(ladysweatCmd)
+	c.AddCommand(modernhiveCmd)
 
 	return c, nil
 }
