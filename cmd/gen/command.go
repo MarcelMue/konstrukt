@@ -15,6 +15,7 @@ import (
 	"github.com/marcelmue/konstrukt/cmd/gen/modernhive"
 	"github.com/marcelmue/konstrukt/cmd/gen/quadrat"
 	"github.com/marcelmue/konstrukt/cmd/gen/shining"
+	"github.com/marcelmue/konstrukt/cmd/gen/swiss16"
 )
 
 const (
@@ -139,6 +140,20 @@ func New(config Config) (*cobra.Command, error) {
 		}
 	}
 
+	var swiss16Cmd *cobra.Command
+	{
+		c := swiss16.Config{
+			Logger: config.Logger,
+			Stderr: config.Stderr,
+			Stdout: config.Stdout,
+		}
+
+		swiss16Cmd, err = swiss16.New(c)
+		if err != nil {
+			return nil, microerror.Mask(err)
+		}
+	}
+
 	f := &flag{}
 
 	r := &runner{
@@ -164,6 +179,7 @@ func New(config Config) (*cobra.Command, error) {
 	c.AddCommand(fiftyfiveCmd)
 	c.AddCommand(ladysweatCmd)
 	c.AddCommand(modernhiveCmd)
+	c.AddCommand(swiss16Cmd)
 
 	return c, nil
 }
