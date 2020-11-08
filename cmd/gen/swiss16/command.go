@@ -11,7 +11,7 @@ import (
 
 const (
 	name        = "swiss16"
-	description = "Draws a rough interpretation of Wolfgang Bosses 'JA-NEIN'."
+	description = "Draws a rough interpretation of Neo Geometrics 'swiss-16'."
 )
 
 type Config struct {
