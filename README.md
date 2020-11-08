@@ -163,7 +163,30 @@ Changing the colors can be easily done like this:
 konstrukt gen modernhive --color1 "#B33771" --color2 "#55E6C1"  --filename modernhive-in.svg
 ```
 
-![Modernhive RU color inspiration](samples/modernhive-in.svg)
+![Modernhive IN color inspiration](samples/modernhive-in.svg)
+
+</details>
+
+### Swiss16
+
+The pattern and default implementation is inspired by [Neo Geometrics](https://dribbble.com/vladikkk09) work titled `swiss-16`.
+
+<details>
+<summary>Usage examples</summary>
+
+The default can be generated with:
+```
+konstrukt gen swiss16
+```
+
+![Swiss16](samples/swiss16.svg)
+
+Changing the colors can be easily done like this:
+```
+konstrukt gen swiss16 --color1 "#222f3e" --color2 "#5f27cd" --color3 "#1dd1a1"  --filename swiss16-ca.svg
+```
+
+![Swiss16 CA color inspiration](samples/swiss16-ca.svg)
 
 </details>
 
