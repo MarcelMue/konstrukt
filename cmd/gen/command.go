@@ -9,6 +9,7 @@ import (
 	"github.com/spf13/cobra"
 
 	"github.com/marcelmue/konstrukt/cmd/gen/fiftyfive"
+	"github.com/marcelmue/konstrukt/cmd/gen/interlocking"
 	"github.com/marcelmue/konstrukt/cmd/gen/interruptions"
 	"github.com/marcelmue/konstrukt/cmd/gen/janein"
 	"github.com/marcelmue/konstrukt/cmd/gen/ladysweat"
@@ -154,6 +155,20 @@ func New(config Config) (*cobra.Command, error) {
 		}
 	}
 
+	var interlockingCmd *cobra.Command
+	{
+		c := interlocking.Config{
+			Logger: config.Logger,
+			Stderr: config.Stderr,
+			Stdout: config.Stdout,
+		}
+
+		interlockingCmd, err = interlocking.New(c)
+		if err != nil {
+			return nil, microerror.Mask(err)
+		}
+	}
+
 	f := &flag{}
 
 	r := &runner{
@@ -180,6 +195,7 @@ func New(config Config) (*cobra.Command, error) {
 	c.AddCommand(ladysweatCmd)
 	c.AddCommand(modernhiveCmd)
 	c.AddCommand(swiss16Cmd)
+	c.AddCommand(interlockingCmd)
 
 	return c, nil
 }
