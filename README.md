@@ -190,6 +190,29 @@ konstrukt gen swiss16 --color1 "#222f3e" --color2 "#5f27cd" --color3 "#1dd1a1"  
 
 </details>
 
+### Interlocking
+
+The pattern and default implementation is inspired by [Cami Dobrins](https://camidraws.com/) work titled `Interlocking Abstract Pattern Background`.
+
+<details>
+<summary>Usage examples</summary>
+
+The default can be generated with:
+```
+konstrukt gen interlocking
+```
+
+![Interlocking](samples/interlocking.svg)
+
+Changing the colors can be easily done like this:
+```
+konstrukt gen interlocking --color1 "#f7f1e3" --color2 "#40407a" --color3 "#33d9b2"  --filename interlocking-es.svg
+```
+
+![Interlocking ES color inspiration](samples/interlocking-es.svg)
+
+</details>
+
 ## Guidelines
 
 Additions to this project should follow these guidelines:
