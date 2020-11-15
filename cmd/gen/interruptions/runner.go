@@ -2,6 +2,7 @@ package interruptions
 
 import (
 	"context"
+	"fmt"
 	"io"
 	"os"
 
@@ -9,6 +10,8 @@ import (
 	"github.com/giantswarm/microerror"
 	"github.com/giantswarm/micrologger"
 	"github.com/spf13/cobra"
+
+	"github.com/marcelmue/konstrukt/pkg/color"
 )
 
 type runner struct {
@@ -24,6 +27,13 @@ func (r *runner) Run(cmd *cobra.Command, args []string) error {
 	err := r.flag.Validate()
 	if err != nil {
 		return microerror.Mask(err)
+	}
+
+	if r.flag.Randomize {
+		r.flag.Color1 = color.Random()
+		r.flag.Color2 = color.Random()
+		r.flag.Color3 = color.Random()
+		fmt.Printf("Set Color1:%s Color2:%s Color3:%s\n", r.flag.Color1, r.flag.Color2, r.flag.Color3)
 	}
 
 	err = r.run(ctx, cmd, args)

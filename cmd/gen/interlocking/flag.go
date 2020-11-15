@@ -2,8 +2,9 @@ package interlocking
 
 import (
 	"github.com/giantswarm/microerror"
-	"github.com/marcelmue/konstrukt/pkg/validate"
 	"github.com/spf13/cobra"
+
+	"github.com/marcelmue/konstrukt/pkg/validate"
 )
 
 const (
@@ -15,6 +16,8 @@ const (
 	flagColor1 = "color1"
 	flagColor2 = "color2"
 	flagColor3 = "color3"
+
+	flagRandomize = "randomize"
 )
 
 type flag struct {
@@ -26,6 +29,8 @@ type flag struct {
 	Color1 string
 	Color2 string
 	Color3 string
+
+	Randomize bool
 }
 
 func (f *flag) Init(cmd *cobra.Command) {
@@ -37,6 +42,8 @@ func (f *flag) Init(cmd *cobra.Command) {
 	cmd.Flags().StringVar(&f.Color1, flagColor1, "#f7f1e3", `First color.`)
 	cmd.Flags().StringVar(&f.Color2, flagColor2, "#fed330", `Second color.`)
 	cmd.Flags().StringVar(&f.Color3, flagColor3, "#0fb9b1", `Third color.`)
+
+	cmd.Flags().BoolVar(&f.Randomize, flagRandomize, false, "Randomize all colors in the pattern, ignore other color flags.")
 }
 
 func (f *flag) Validate() error {
