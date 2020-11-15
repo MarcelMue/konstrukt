@@ -39,14 +39,12 @@ func (r *runner) run(ctx context.Context, cmd *cobra.Command, args []string) err
 	if err != nil {
 		return microerror.Mask(err)
 	}
+
+	c1, c2, c3 := r.flag.Color1, r.flag.Color2, r.flag.Color3
 	width, height := r.flag.Width, r.flag.Height
 
 	canvas := svg.New(f)
 	canvas.Start(width, height)
-	c1 := r.flag.Color1
-	c2 := r.flag.Color2
-	c3 := r.flag.Color3
-
 	canvas.Rect(0, 0, width, height, "fill:"+c1)
 
 	// Polygon

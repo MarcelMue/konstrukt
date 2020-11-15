@@ -40,21 +40,20 @@ func (r *runner) run(ctx context.Context, cmd *cobra.Command, args []string) err
 		return microerror.Mask(err)
 	}
 	width, height := r.flag.Width, r.flag.Height
+	c1, c2 := r.flag.Color1, r.flag.Color2
 
 	canvas := svg.New(f)
 	canvas.Start(width, height)
-	c1 := r.flag.Color1
-	c2 := r.flag.Color2
 
-	// triangle 1
+	// Triangle 1.
 	xt1 := []int{0, 25, 0}
 	yt1 := []int{50, 50, 25}
 
-	// triangle 2
+	// Triangle 2.
 	xt2 := []int{50, 25, 50}
 	yt2 := []int{50, 25, 25}
 
-	// triangle 3
+	// Triangle 3.
 	xt3 := []int{25, 25, 0}
 	yt3 := []int{25, 0, 0}
 

@@ -40,16 +40,17 @@ func (r *runner) run(ctx context.Context, cmd *cobra.Command, args []string) err
 		return microerror.Mask(err)
 	}
 
-	c1 := r.flag.Color1
-	c2 := r.flag.Color2
-	c3 := r.flag.Color3
-
 	width, height := r.flag.Width, r.flag.Height
+	c1, c2, c3 := r.flag.Color1, r.flag.Color2, r.flag.Color3
 
 	canvas := svg.New(f)
 	canvas.Start(width, height)
+
+	// Rectangle size offsets in each column.
 	ypos := []int{0, -80, -75, -5, -145, -100, -50, -10, -130, -120, -20}
+	// Repeating color sequence.
 	ycol := []string{c1, c1, c2, c3, c3, c2, c2, c1, c3, c3, c2, c1, c2}
+
 	ypositioncounter := 0
 	for x := 5; x < width; x += 15 {
 		xpositioncounter := 0

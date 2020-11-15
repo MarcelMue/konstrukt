@@ -40,11 +40,10 @@ func (r *runner) run(ctx context.Context, cmd *cobra.Command, args []string) err
 		return microerror.Mask(err)
 	}
 	width, height := r.flag.Width, r.flag.Height
+	c1, c2 := r.flag.Color1, r.flag.Color2
 
 	canvas := svg.New(f)
 	canvas.Start(width, height)
-	c1 := r.flag.Color1
-	c2 := r.flag.Color2
 
 	canvas.Def()
 	canvas.Gid("unit")

@@ -41,17 +41,14 @@ func (r *runner) run(ctx context.Context, cmd *cobra.Command, args []string) err
 		return microerror.Mask(err)
 	}
 	width, height := r.flag.Width, r.flag.Height
+	c1, c2 := r.flag.Color1, r.flag.Color2
+	stylefmt := "stroke:%s;stroke-width:%d"
 
 	canvas := svg.New(f)
 	canvas.Start(width, height)
-	c1 := r.flag.Color1
-	c2 := r.flag.Color2
-	stylefmt := "stroke:%s;stroke-width:%d"
-
-	// Background fill
 	canvas.Rect(0, 0, width, height, "fill:"+c1)
 
-	// Polyline
+	// Polyline.
 	xpl := []int{20, 0, -20, -20, 0, 20}
 	ypl := []int{15, 0, 15, 60, 75, 60}
 
@@ -66,10 +63,11 @@ func (r *runner) run(ctx context.Context, cmd *cobra.Command, args []string) err
 	canvas.Gend()
 	canvas.DefEnd()
 
+	offset := (width + height) / 2
 	ypositioncounter := 0
-	for x := 0; x < width+500; x += 60 {
+	for x := 0; x < width+offset; x += 60 {
 		xpositioncounter := 0
-		for y := -500; y < height; y += 81 {
+		for y := -offset; y < height; y += 81 {
 			xfinal := x - (xpositioncounter * 25)
 			yfinal := y + (ypositioncounter * 20)
 

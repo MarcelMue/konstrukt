@@ -39,20 +39,18 @@ func (r *runner) run(ctx context.Context, cmd *cobra.Command, args []string) err
 	if err != nil {
 		return microerror.Mask(err)
 	}
+
 	width, height := r.flag.Width, r.flag.Height
+	c1, c2, c3 := r.flag.Color1, r.flag.Color2, r.flag.Color3
 
 	canvas := svg.New(f)
 	canvas.Start(width, height)
-	c1 := r.flag.Color1
-	c2 := r.flag.Color2
-	c3 := r.flag.Color3
-
 	canvas.Rect(0, 0, width, height, "fill:"+c1)
 
-	// Skewed rectangle
+	// Skewed rectangle.
 	xp := []int{50, 70, 80, 60}
 	yp := []int{50, 50, 30, 30}
-	// Polygon
+	// Polygon.
 	xt := []int{45, 80, 85, 70, 80, 60}
 	yt := []int{30, 30, 20, 20, 0, 0}
 

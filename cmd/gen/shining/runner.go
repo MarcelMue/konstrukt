@@ -61,6 +61,7 @@ func (r *runner) run(ctx context.Context, cmd *cobra.Command, args []string) err
 	canvas.Gend()
 	canvas.Gend()
 	canvas.DefEnd()
+
 	canvas.Rect(0, 0, width, height, "fill:"+r.flag.Background)
 	canvas.Gstyle(fmt.Sprintf(stylefmt, r.flag.Foreground, 12, r.flag.Accent))
 	for y := -33; y < height; y += 130 {
