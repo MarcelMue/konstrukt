@@ -2,8 +2,9 @@ package fiftyfive
 
 import (
 	"github.com/giantswarm/microerror"
-	"github.com/marcelmue/konstrukt/pkg/validate"
 	"github.com/spf13/cobra"
+
+	"github.com/marcelmue/konstrukt/pkg/validate"
 )
 
 const (

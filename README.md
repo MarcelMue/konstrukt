@@ -4,7 +4,16 @@ A simple commandline tool to generate SVGs roughly fitting the area of [concrete
 
 ## Usage
 
-This sections shows example usage of the implemented commands.
+All commands allow for the following flags:
+```
+      --filename string   Name of the output file.
+      --height int        Height of the output file in pixels. (default 500)
+  -h, --help              help
+      --randomize         Randomize all colors in the pattern, ignore other color flags.
+      --width int         Width of the output file in pixels. (default 500)
+```
+
+Other flags for coloring patterns can be explored in the individual usage examples below.
 
 ### Shining
 
