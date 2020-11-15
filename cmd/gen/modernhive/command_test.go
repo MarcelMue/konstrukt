@@ -24,8 +24,8 @@ func Test_command(t *testing.T) {
 		{
 			name:     "case 1: in color pattern",
 			filename: "modernhive-in",
-			c1:       "#B33771",
-			c2:       "#55E6C1",
+			c1:       "#b33771",
+			c2:       "#55e6c1",
 		},
 		{
 			name:     "case 2: banner resize",
