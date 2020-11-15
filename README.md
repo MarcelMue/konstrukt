@@ -8,7 +8,9 @@ This sections shows example usage of the implemented commands.
 
 ### Shining
 
-The pattern of the carpet in the shining (code initially implemented [here](https://github.com/ajstarks/svgo-workshop/blob/master/code/svgplay-samples/shining.go)) can be easily generated and recolored with konstrukt.
+The pattern and default implementation is inspired by a carpet design by [David Nightingale Hicks](https://en.wikipedia.org/wiki/David_Nightingale_Hicks) commonly known as "Hicks' Hexagon".
+It became known in popular culture as the pattern of the carpet in [The Shining](https://en.wikipedia.org/wiki/The_Shining_(film)).
+The code for the pattern was initially implemented [here.](https://github.com/ajstarks/svgo-workshop/blob/master/code/svgplay-samples/shining.go))
 
 <details>
 <summary>Usage examples</summary>
