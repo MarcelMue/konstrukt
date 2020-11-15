@@ -14,6 +14,8 @@ const (
 
 	flagColor1 = "color1"
 	flagColor2 = "color2"
+
+	flagRandomize = "randomize"
 )
 
 type flag struct {
@@ -24,6 +26,8 @@ type flag struct {
 
 	Color1 string
 	Color2 string
+
+	Randomize bool
 }
 
 func (f *flag) Init(cmd *cobra.Command) {
@@ -34,6 +38,8 @@ func (f *flag) Init(cmd *cobra.Command) {
 
 	cmd.Flags().StringVar(&f.Color1, flagColor1, "#ffffff", `First color.`)
 	cmd.Flags().StringVar(&f.Color2, flagColor2, "#000000", `Second color.`)
+
+	cmd.Flags().BoolVar(&f.Randomize, flagRandomize, false, "Randomize all colors in the pattern, ignore other color flags.")
 }
 
 func (f *flag) Validate() error {
