@@ -11,7 +11,7 @@ import (
 
 const (
 	name        = "shining"
-	description = "Draws the carpet from the shining. Sourcecode adapted from https://github.com/ajstarks/svgo-workshop/blob/master/code/svgplay-samples/shining.go"
+	description = "Draws a carpet design by David Nightingale Hicks. Known in popular culture as the carpet featured in the movie 'The Shining'."
 )
 
 type Config struct {
