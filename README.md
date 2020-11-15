@@ -10,7 +10,7 @@ This sections shows example usage of the implemented commands.
 
 The pattern and default implementation is inspired by a carpet design by [David Nightingale Hicks](https://en.wikipedia.org/wiki/David_Nightingale_Hicks) commonly known as "Hicks' Hexagon".
 It became known in popular culture as the pattern of the carpet in [The Shining](https://en.wikipedia.org/wiki/The_Shining_(film)).
-The code for the pattern was initially implemented [here.](https://github.com/ajstarks/svgo-workshop/blob/master/code/svgplay-samples/shining.go))
+The code for the pattern was initially implemented [here.](https://github.com/ajstarks/svgo-workshop/blob/master/code/svgplay-samples/shining.go)
 
 <details>
 <summary>Usage examples</summary>
@@ -24,10 +24,10 @@ konstrukt gen shining
 
 Changing the colors can be easily done like this:
 ```
-konstrukt gen shining --foreground "#2c2c54" --background "#d1ccc0" --accent "#ffb142" --filename shining-spanish.svg
+konstrukt gen shining --color3 "#2c2c54" --color2 "#d1ccc0" --color1 "#ffb142" --filename shining-es.svg
 ```
 
-![Shining Spanish color inspiration](samples/shining-spanish.svg)
+![Shining ES color inspiration](samples/shining-es.svg)
 
 </details>
 
@@ -47,10 +47,10 @@ konstrukt gen interruptions
 
 Changing the colors can be easily done like this:
 ```
-konstrukt gen interruptions --color1 "#00a8ff" --color2 "#2f3640" --color3 "#fbc531" --filename interruptions-british.svg
+konstrukt gen interruptions --color1 "#00a8ff" --color2 "#2f3640" --color3 "#fbc531" --filename interruptions-br.svg
 ```
 
-![Interruptions British color inspiration](samples/interruptions-british.svg)
+![Interruptions BR color inspiration](samples/interruptions-br.svg)
 
 </details>
 
@@ -70,10 +70,10 @@ konstrukt gen quadrat
 
 Changing the colors can be easily done like this:
 ```
-konstrukt gen quadrat --color1 "#f6b93b" --color2 "#38ada9"  --filename quadrat-french.svg
+konstrukt gen quadrat --color1 "#f6b93b" --color2 "#38ada9"  --filename quadrat-fr.svg
 ```
 
-![Quadrat French color inspiration](samples/quadrat-french.svg)
+![Quadrat FR color inspiration](samples/quadrat-fr.svg)
 
 </details>
 

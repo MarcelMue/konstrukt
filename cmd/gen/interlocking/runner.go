@@ -40,10 +40,7 @@ func (r *runner) run(ctx context.Context, cmd *cobra.Command, args []string) err
 		return microerror.Mask(err)
 	}
 
-	c1 := r.flag.Color1
-	c2 := r.flag.Color2
-	c3 := r.flag.Color3
-
+	c1, c2, c3 := r.flag.Color1, r.flag.Color2, r.flag.Color3
 	width, height := r.flag.Width, r.flag.Height
 
 	canvas := svg.New(f)
@@ -66,8 +63,8 @@ func (r *runner) run(ctx context.Context, cmd *cobra.Command, args []string) err
 	canvas.DefEnd()
 
 	ypositioncounter := 0
-	for y := -80; y < width+80; y += 80 {
-		for x := -160; x < height+160; x += 160 {
+	for y := -80; y < height+80; y += 80 {
+		for x := -160; x < width+160; x += 160 {
 			if ypositioncounter%2 == 0 {
 				canvas.Use(x, y, "#unit", "fill:"+c2)
 				canvas.Use(x, y, "#runit", "fill:"+c2)

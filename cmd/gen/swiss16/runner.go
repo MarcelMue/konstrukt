@@ -40,16 +40,13 @@ func (r *runner) run(ctx context.Context, cmd *cobra.Command, args []string) err
 		return microerror.Mask(err)
 	}
 	width, height := r.flag.Width, r.flag.Height
+	c1, c2, c3 := r.flag.Color1, r.flag.Color2, r.flag.Color3
 
 	canvas := svg.New(f)
 	canvas.Start(width, height)
-	c1 := r.flag.Color1
-	c2 := r.flag.Color2
-	c3 := r.flag.Color3
-
 	canvas.Rect(0, 0, width, height, "fill:"+c1)
 
-	// Polygon
+	// Polygon.
 	xp := []int{0, 0, 40, 60}
 	yp := []int{0, 50, 90, 60}
 
@@ -65,8 +62,8 @@ func (r *runner) run(ctx context.Context, cmd *cobra.Command, args []string) err
 	canvas.DefEnd()
 
 	ypositioncounter := 0
-	for y := -60; y < width; y += 60 {
-		for x := -120; x < height; x += 120 {
+	for y := -60; y < height; y += 60 {
+		for x := -120; x < width; x += 120 {
 			if ypositioncounter%2 == 0 {
 				canvas.Use(x, y, "#unit", "fill:"+c2)
 				canvas.Use(x, y, "#runit", "fill:"+c3)
