@@ -12,6 +12,7 @@ import (
 	"github.com/spf13/cobra"
 
 	"github.com/marcelmue/konstrukt/pkg/color"
+	"github.com/marcelmue/konstrukt/pkg/project"
 )
 
 type runner struct {
@@ -55,6 +56,7 @@ func (r *runner) run(ctx context.Context, cmd *cobra.Command, args []string) err
 
 	canvas := svg.New(f)
 	canvas.Start(width, height)
+	canvas.Desc(project.PatternDesc())
 	canvas.Rect(0, 0, width, height, "fill:"+c1)
 
 	// Skewed rectangle.

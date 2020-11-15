@@ -12,6 +12,7 @@ import (
 	"github.com/spf13/cobra"
 
 	"github.com/marcelmue/konstrukt/pkg/color"
+	"github.com/marcelmue/konstrukt/pkg/project"
 )
 
 type runner struct {
@@ -55,6 +56,7 @@ func (r *runner) run(ctx context.Context, cmd *cobra.Command, args []string) err
 
 	canvas := svg.New(f)
 	canvas.Start(width, height)
+	canvas.Desc(project.PatternDesc())
 
 	// Rectangle size offsets in each column.
 	ypos := []int{0, -80, -75, -5, -145, -100, -50, -10, -130, -120, -20}

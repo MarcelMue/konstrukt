@@ -3,6 +3,7 @@
 <svg width="500" height="500"
      xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink">
+<desc>Generated with https://github.com/marcelmue/konstrukt</desc>
 <rect x="5" y="0" width="5" height="150" style="fill: #e55039" />
 <rect x="5" y="160" width="5" height="150" style="fill: #e55039" />
 <rect x="5" y="320" width="5" height="150" style="fill: #0a3d62" />
