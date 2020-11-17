@@ -224,7 +224,7 @@ konstrukt gen interlocking --color1 "#f7f1e3" --color2 "#40407a" --color3 "#33d9
 
 </details>
 
-### Whtiegold
+### Whitegold
 
 The pattern and default implementation is [MarcelMues](https://github.com/MarcelMue) work titled `whitegold`.
 
