@@ -224,6 +224,29 @@ konstrukt gen interlocking --color1 "#f7f1e3" --color2 "#40407a" --color3 "#33d9
 
 </details>
 
+### Whitegold
+
+The pattern and default implementation is [MarcelMues](https://github.com/MarcelMue) work titled `whitegold`.
+
+<details>
+<summary>Usage examples</summary>
+
+The default can be generated with:
+```
+konstrukt gen whitegold
+```
+
+![Whitegold](samples/whitegold.svg)
+
+Changing the colors can be easily done like this:
+```
+konstrukt gen whitegold --color1 "#dff9fb" --color2 "#6ab04c"  --filename whitegold-au.svg
+```
+
+![Whitegold AU color inspiration](samples/whitegold-au.svg)
+
+</details>
+
 ## Guidelines
 
 Additions to this project should follow these guidelines:
