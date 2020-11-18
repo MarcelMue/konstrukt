@@ -2,6 +2,78 @@
 
 A simple commandline tool to generate SVGs roughly fitting the area of [concrete art](https://en.wikipedia.org/wiki/Concrete_art).
 
+## Getting started
+
+The `konstrukt` binary can be downloaded from [releases](https://github.com/MarcelMue/konstrukt/releases) section of this repository.
+It is contained together with the [LICENSE](LICENSE) in a `.tar.gz` or `.zip` depending on the target operating system.
+
+You can interact with `konstrukt` through your native [command line interface](https://en.wikipedia.org/wiki/Command-line_interface).
+If you are unfamiliar with a command line then these examples should give you some guidance:
+
+<details>
+<summary>Using Windows</summary>
+First download the latest `.zip` release from the [releases](https://github.com/MarcelMue/konstrukt/releases) page.
+
+Unzip the archived files in a location of your choice (e.g. your `Downloads` folder).
+
+Open a command line of your choice (e.g. `cmd.exe`).
+
+Navigate tp the location of the unpacked `konstrukt` binary (e.g. `cd C:\Users\SomeUser\Downloads`).
+
+Display the help text of `konstrukt` by calling it without arguments (`konstrukt.exe`).
+The output should look like this:
+```
+Command line tool for generating konstruktive art.
+
+Usage:
+  konstrukt [flags]
+  konstrukt [command]
+
+Available Commands:
+  gen         Generate files.
+  help        Help about any command
+
+Flags:
+  -h, --help   help for konstrukt
+
+Use "konstrukt [command] --help" for more information about a command.
+```
+
+Now you should be able to experiment with the usage examples below just remember to use `konstrukt.exe`!
+</details>
+
+<details>
+<summary>Using Linux/MacOS</summary>
+First download the correct `.tar.gz` release depending on your operating system from the [releases](https://github.com/MarcelMue/konstrukt/releases) page.
+
+Unpack the `.tar.gz` in a location of your choice (e.g. your `Downloads` folder).
+
+Open a terminal of your choice.
+
+Navigate to the location of the unpacked `konstrukt` binary (e.g. `cd ~/Downloads`).
+
+Display the help text of `konstrukt` by calling it without arguments (`./konstrukt`).
+The output should look like this:
+```
+Command line tool for generating konstruktive art.
+
+Usage:
+  konstrukt [flags]
+  konstrukt [command]
+
+Available Commands:
+  gen         Generate files.
+  help        Help about any command
+
+Flags:
+  -h, --help   help for konstrukt
+
+Use "konstrukt [command] --help" for more information about a command.
+```
+
+Now you should be able to experiment with the usage examples below!
+</details>
+
 ## Usage
 
 All commands allow for the following flags:
