@@ -12,7 +12,8 @@ You can interact with `konstrukt` through your native [command line interface](h
 If you are unfamiliar with a command line then these examples should give you some guidance:
 <details>
 <summary>Using Windows</summary>
-First download the latest `.zip` release from the releases page.
+
+First download the latest `.zip` release from the [releases](https://github.com/MarcelMue/konstrukt/releases) page.
 
 Unzip the archived files in a location of your choice (e.g. your `Downloads` folder).
 
@@ -43,7 +44,8 @@ Now you should be able to experiment with the usage examples below just remember
 </details>
 <details>
 <summary>Using Linux/MacOS</summary>
-First download the correct `.tar.gz` release depending on your operating system from the releases page.
+
+First download the correct `.tar.gz` release depending on your operating system from the [releases](https://github.com/MarcelMue/konstrukt/releases) page.
 
 Unpack the `.tar.gz` in a location of your choice (e.g. your `Downloads` folder).
 
