@@ -8,11 +8,11 @@ The `konstrukt` binary can be downloaded from [releases](https://github.com/Marc
 It is contained together with the [LICENSE](LICENSE) in a `.tar.gz` or `.zip` depending on the target operating system.
 
 You can interact with `konstrukt` through your native [command line interface](https://en.wikipedia.org/wiki/Command-line_interface).
-If you are unfamiliar with a command line then these examples should give you some guidance:
 
+If you are unfamiliar with a command line then these examples should give you some guidance:
 <details>
 <summary>Using Windows</summary>
-First download the latest `.zip` release from the [releases](https://github.com/MarcelMue/konstrukt/releases) page.
+First download the latest `.zip` release from the releases page.
 
 Unzip the archived files in a location of your choice (e.g. your `Downloads` folder).
 
@@ -41,10 +41,9 @@ Use "konstrukt [command] --help" for more information about a command.
 
 Now you should be able to experiment with the usage examples below just remember to use `konstrukt.exe`!
 </details>
-
 <details>
 <summary>Using Linux/MacOS</summary>
-First download the correct `.tar.gz` release depending on your operating system from the [releases](https://github.com/MarcelMue/konstrukt/releases) page.
+First download the correct `.tar.gz` release depending on your operating system from the releases page.
 
 Unpack the `.tar.gz` in a location of your choice (e.g. your `Downloads` folder).
 
