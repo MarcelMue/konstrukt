@@ -8,6 +8,7 @@ import (
 	"github.com/giantswarm/micrologger"
 	"github.com/spf13/cobra"
 
+	"github.com/marcelmue/konstrukt/cmd/gen/fallingdaggers"
 	"github.com/marcelmue/konstrukt/cmd/gen/fiftyfive"
 	"github.com/marcelmue/konstrukt/cmd/gen/interlocking"
 	"github.com/marcelmue/konstrukt/cmd/gen/interruptions"
@@ -184,6 +185,20 @@ func New(config Config) (*cobra.Command, error) {
 		}
 	}
 
+	var fallingdaggersCmd *cobra.Command
+	{
+		c := fallingdaggers.Config{
+			Logger: config.Logger,
+			Stderr: config.Stderr,
+			Stdout: config.Stdout,
+		}
+
+		fallingdaggersCmd, err = fallingdaggers.New(c)
+		if err != nil {
+			return nil, microerror.Mask(err)
+		}
+	}
+
 	f := &flag{}
 
 	r := &runner{
@@ -212,6 +227,7 @@ func New(config Config) (*cobra.Command, error) {
 	c.AddCommand(swiss16Cmd)
 	c.AddCommand(interlockingCmd)
 	c.AddCommand(whitegoldCmd)
+	c.AddCommand(fallingdaggersCmd)
 
 	return c, nil
 }
