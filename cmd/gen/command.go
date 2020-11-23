@@ -19,6 +19,7 @@ import (
 	"github.com/marcelmue/konstrukt/cmd/gen/shining"
 	"github.com/marcelmue/konstrukt/cmd/gen/swiss16"
 	"github.com/marcelmue/konstrukt/cmd/gen/whitegold"
+	"github.com/marcelmue/konstrukt/cmd/gen/whitegold2"
 )
 
 const (
@@ -199,6 +200,20 @@ func New(config Config) (*cobra.Command, error) {
 		}
 	}
 
+	var whitegold2Cmd *cobra.Command
+	{
+		c := whitegold2.Config{
+			Logger: config.Logger,
+			Stderr: config.Stderr,
+			Stdout: config.Stdout,
+		}
+
+		whitegold2Cmd, err = whitegold2.New(c)
+		if err != nil {
+			return nil, microerror.Mask(err)
+		}
+	}
+
 	f := &flag{}
 
 	r := &runner{
@@ -228,6 +243,7 @@ func New(config Config) (*cobra.Command, error) {
 	c.AddCommand(interlockingCmd)
 	c.AddCommand(whitegoldCmd)
 	c.AddCommand(fallingdaggersCmd)
+	c.AddCommand(whitegold2Cmd)
 
 	return c, nil
 }
