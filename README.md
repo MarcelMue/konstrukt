@@ -343,6 +343,29 @@ konstrukt gen fallingdaggers --color1 "#e55039" --color2 "#f39c12"  --filename f
 
 </details>
 
+### Whitegold2
+
+The pattern and default implementation is [MarcelMues](https://github.com/MarcelMue) work titled `whitegold2`.
+
+<details>
+<summary>Usage examples</summary>
+
+The default can be generated with:
+```
+konstrukt gen whitegold2
+```
+
+![Whitegold2](samples/whitegold2.svg)
+
+Changing the colors can be easily done like this:
+```
+konstrukt gen whitegold2 --color1 "#1e272e" --color2 "#f53b57"  --filename whitegold2-se.svg
+```
+
+![Whitegold2 SE color inspiration](samples/whitegold2-se.svg)
+
+</details>
+
 ## Guidelines
 
 Additions to this project should follow these guidelines:
