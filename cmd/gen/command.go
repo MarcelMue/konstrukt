@@ -244,5 +244,6 @@ func New(config Config) (*cobra.Command, error) {
 	c.AddCommand(whitegoldCmd)
 	c.AddCommand(fallingdaggersCmd)
 	c.AddCommand(whitegold2Cmd)
+
 	return c, nil
 }
