@@ -8,6 +8,7 @@ import (
 	"github.com/giantswarm/micrologger"
 	"github.com/spf13/cobra"
 
+	"github.com/marcelmue/konstrukt/cmd/gen/blockplay"
 	"github.com/marcelmue/konstrukt/cmd/gen/fallingdaggers"
 	"github.com/marcelmue/konstrukt/cmd/gen/fiftyfive"
 	"github.com/marcelmue/konstrukt/cmd/gen/interlocking"
@@ -214,6 +215,20 @@ func New(config Config) (*cobra.Command, error) {
 		}
 	}
 
+	var blockplayCmd *cobra.Command
+	{
+		c := blockplay.Config{
+			Logger: config.Logger,
+			Stderr: config.Stderr,
+			Stdout: config.Stdout,
+		}
+
+		blockplayCmd, err = blockplay.New(c)
+		if err != nil {
+			return nil, microerror.Mask(err)
+		}
+	}
+
 	f := &flag{}
 
 	r := &runner{
@@ -244,6 +259,7 @@ func New(config Config) (*cobra.Command, error) {
 	c.AddCommand(whitegoldCmd)
 	c.AddCommand(fallingdaggersCmd)
 	c.AddCommand(whitegold2Cmd)
+	c.AddCommand(blockplayCmd)
 
 	return c, nil
 }

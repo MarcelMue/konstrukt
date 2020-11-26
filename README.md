@@ -366,6 +366,29 @@ konstrukt gen whitegold2 --color1 "#1e272e" --color2 "#f53b57"  --filename white
 
 </details>
 
+### Blockplay
+
+The pattern is inspired by [Sophie Adams-Foster](https://www.instagram.com/sharp.line.hunter/) work titled `blockplay`.
+
+<details>
+<summary>Usage examples</summary>
+
+The default can be generated with:
+```
+konstrukt gen blockplay
+```
+
+![blockplay](samples/blockplay.svg)
+
+Changing the colors can be easily done like this:
+```
+konstrukt gen blockplay --color1 "#ced6e0" --color2 "#ff6b81"  --filename blockplay-cn.svg
+```
+
+![blockplay CN color inspiration](samples/blockplay-cn.svg)
+
+</details>
+
 ## Guidelines
 
 Additions to this project should follow these guidelines:
