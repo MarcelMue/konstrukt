@@ -98,7 +98,6 @@ func (r *runner) run(ctx context.Context, cmd *cobra.Command, args []string) err
 	canvas.Gend()
 	canvas.DefEnd()
 
-	ypositioncounter := 0
 	for y := -220; y < height+200; y += 220 {
 		for x := -140; x < width+200; x += 140 {
 
@@ -107,7 +106,6 @@ func (r *runner) run(ctx context.Context, cmd *cobra.Command, args []string) err
 			canvas.Use(x, y, "#r2unit")
 			canvas.Use(x, y, "#r3unit")
 		}
-		ypositioncounter++
 	}
 	canvas.End()
 
