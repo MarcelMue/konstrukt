@@ -389,6 +389,29 @@ konstrukt gen blockplay --color1 "#ced6e0" --color2 "#ff6b81"  --filename blockp
 
 </details>
 
+### Blockplay2
+
+The pattern is inspired by [Sophie Adams-Foster](https://www.instagram.com/sharp.line.hunter/) work titled `blockplay`.
+
+<details>
+<summary>Usage examples</summary>
+
+The default can be generated with:
+```
+konstrukt gen blockplay2
+```
+
+![blockplay2](samples/blockplay2.svg)
+
+Changing the colors can be easily done like this:
+```
+konstrukt gen blockplay2 --color1 "#ced6e0" --color2 "#ff6b81"  --filename blockplay2-cn.svg
+```
+
+![blockplay2 CN color inspiration](samples/blockplay2-cn.svg)
+
+</details>
+
 ## Guidelines
 
 Additions to this project should follow these guidelines:
