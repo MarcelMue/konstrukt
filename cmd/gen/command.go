@@ -9,6 +9,7 @@ import (
 	"github.com/spf13/cobra"
 
 	"github.com/marcelmue/konstrukt/cmd/gen/blockplay"
+	"github.com/marcelmue/konstrukt/cmd/gen/blockplay2"
 	"github.com/marcelmue/konstrukt/cmd/gen/fallingdaggers"
 	"github.com/marcelmue/konstrukt/cmd/gen/fiftyfive"
 	"github.com/marcelmue/konstrukt/cmd/gen/interlocking"
@@ -229,6 +230,20 @@ func New(config Config) (*cobra.Command, error) {
 		}
 	}
 
+	var blockplay2Cmd *cobra.Command
+	{
+		c := blockplay2.Config{
+			Logger: config.Logger,
+			Stderr: config.Stderr,
+			Stdout: config.Stdout,
+		}
+
+		blockplay2Cmd, err = blockplay2.New(c)
+		if err != nil {
+			return nil, microerror.Mask(err)
+		}
+	}
+
 	f := &flag{}
 
 	r := &runner{
@@ -260,6 +275,7 @@ func New(config Config) (*cobra.Command, error) {
 	c.AddCommand(fallingdaggersCmd)
 	c.AddCommand(whitegold2Cmd)
 	c.AddCommand(blockplayCmd)
+	c.AddCommand(blockplay2Cmd)
 
 	return c, nil
 }
