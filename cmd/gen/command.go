@@ -17,6 +17,7 @@ import (
 	"github.com/marcelmue/konstrukt/cmd/gen/janein"
 	"github.com/marcelmue/konstrukt/cmd/gen/ladysweat"
 	"github.com/marcelmue/konstrukt/cmd/gen/modernhive"
+	"github.com/marcelmue/konstrukt/cmd/gen/octolines"
 	"github.com/marcelmue/konstrukt/cmd/gen/quadrat"
 	"github.com/marcelmue/konstrukt/cmd/gen/shining"
 	"github.com/marcelmue/konstrukt/cmd/gen/swiss16"
@@ -244,6 +245,20 @@ func New(config Config) (*cobra.Command, error) {
 		}
 	}
 
+	var octolinesCmd *cobra.Command
+	{
+		c := octolines.Config{
+			Logger: config.Logger,
+			Stderr: config.Stderr,
+			Stdout: config.Stdout,
+		}
+
+		octolinesCmd, err = octolines.New(c)
+		if err != nil {
+			return nil, microerror.Mask(err)
+		}
+	}
+
 	f := &flag{}
 
 	r := &runner{
@@ -276,6 +291,7 @@ func New(config Config) (*cobra.Command, error) {
 	c.AddCommand(whitegold2Cmd)
 	c.AddCommand(blockplayCmd)
 	c.AddCommand(blockplay2Cmd)
+	c.AddCommand(octolinesCmd)
 
 	return c, nil
 }

@@ -412,6 +412,29 @@ konstrukt gen blockplay2 --color1 "#ced6e0" --color2 "#ff6b81"  --filename block
 
 </details>
 
+### Octolines
+
+The pattern and default implementation is [MarcelMues](https://github.com/MarcelMue) work titled `octolines`.
+
+<details>
+<summary>Usage examples</summary>
+
+The default can be generated with:
+```
+konstrukt gen octolines
+```
+
+![octolines](samples/octolines.svg)
+
+Changing the colors can be easily done like this:
+```
+konstrukt gen octolines --color1 "#2c3e50" --color2 "#bdc3c7" --color3 "#b8e994"  --filename octolines-cn.svg
+```
+
+![octolines CN color inspiration](samples/octolines-cn.svg)
+
+</details>
+
 ## Guidelines
 
 Additions to this project should follow these guidelines:
