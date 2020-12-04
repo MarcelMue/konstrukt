@@ -18,6 +18,7 @@ import (
 	"github.com/marcelmue/konstrukt/cmd/gen/ladysweat"
 	"github.com/marcelmue/konstrukt/cmd/gen/modernhive"
 	"github.com/marcelmue/konstrukt/cmd/gen/octolines"
+	"github.com/marcelmue/konstrukt/cmd/gen/qbert"
 	"github.com/marcelmue/konstrukt/cmd/gen/quadrat"
 	"github.com/marcelmue/konstrukt/cmd/gen/shining"
 	"github.com/marcelmue/konstrukt/cmd/gen/swiss16"
@@ -259,6 +260,20 @@ func New(config Config) (*cobra.Command, error) {
 		}
 	}
 
+	var qbertCmd *cobra.Command
+	{
+		c := qbert.Config{
+			Logger: config.Logger,
+			Stderr: config.Stderr,
+			Stdout: config.Stdout,
+		}
+
+		qbertCmd, err = qbert.New(c)
+		if err != nil {
+			return nil, microerror.Mask(err)
+		}
+	}
+
 	f := &flag{}
 
 	r := &runner{
@@ -292,6 +307,7 @@ func New(config Config) (*cobra.Command, error) {
 	c.AddCommand(blockplayCmd)
 	c.AddCommand(blockplay2Cmd)
 	c.AddCommand(octolinesCmd)
+	c.AddCommand(qbertCmd)
 
 	return c, nil
 }
