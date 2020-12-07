@@ -435,6 +435,29 @@ konstrukt gen octolines --color1 "#2c3e50" --color2 "#bdc3c7" --color3 "#b8e994"
 
 </details>
 
+### Qbert
+
+The pattern is inspired by the game Q-bert.
+
+<details>
+<summary>Usage examples</summary>
+
+The default can be generated with:
+```
+konstrukt gen qbert
+```
+
+![octolines](samples/qbert.svg)
+
+Changing the colors can be easily done like this:
+```
+konstrukt gen qbert --color1 "#1abc9c" --color2 "#f39c12" --color3 "#079992" --filename qbert-ca.svg
+```
+
+![octolines CN color inspiration](samples/qbert-ca.svg)
+
+</details>
+
 ## Guidelines
 
 Additions to this project should follow these guidelines:
