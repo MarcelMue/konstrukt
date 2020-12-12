@@ -458,6 +458,29 @@ konstrukt gen qbert --color1 "#1abc9c" --color2 "#f39c12" --color3 "#079992" --f
 
 </details>
 
+### Hourglass
+
+The pattern and default implementation is [MarcelMues](https://github.com/MarcelMue) work titled `hourglass`.
+
+<details>
+<summary>Usage examples</summary>
+
+The default can be generated with:
+```
+konstrukt gen hourglass
+```
+
+![hourglass](samples/hourglass.svg)
+
+Changing the colors can be easily done like this:
+```
+konstrukt gen hourglass --color1 "#e55039" --color2 "#fa983a" --color3 "#fad390"  --filename hourglass-cn.svg
+```
+
+![hourglass CN color inspiration](samples/hourglass-cn.svg)
+
+</details>
+
 ## Guidelines
 
 Additions to this project should follow these guidelines:
