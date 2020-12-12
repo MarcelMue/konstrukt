@@ -12,6 +12,7 @@ import (
 	"github.com/marcelmue/konstrukt/cmd/gen/blockplay2"
 	"github.com/marcelmue/konstrukt/cmd/gen/fallingdaggers"
 	"github.com/marcelmue/konstrukt/cmd/gen/fiftyfive"
+	"github.com/marcelmue/konstrukt/cmd/gen/hourglass"
 	"github.com/marcelmue/konstrukt/cmd/gen/interlocking"
 	"github.com/marcelmue/konstrukt/cmd/gen/interruptions"
 	"github.com/marcelmue/konstrukt/cmd/gen/janein"
@@ -274,6 +275,20 @@ func New(config Config) (*cobra.Command, error) {
 		}
 	}
 
+	var hourglassCmd *cobra.Command
+	{
+		c := hourglass.Config{
+			Logger: config.Logger,
+			Stderr: config.Stderr,
+			Stdout: config.Stdout,
+		}
+
+		hourglassCmd, err = hourglass.New(c)
+		if err != nil {
+			return nil, microerror.Mask(err)
+		}
+	}
+
 	f := &flag{}
 
 	r := &runner{
@@ -308,6 +323,7 @@ func New(config Config) (*cobra.Command, error) {
 	c.AddCommand(blockplay2Cmd)
 	c.AddCommand(octolinesCmd)
 	c.AddCommand(qbertCmd)
+	c.AddCommand(hourglassCmd)
 
 	return c, nil
 }
