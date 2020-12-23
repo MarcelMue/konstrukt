@@ -23,6 +23,7 @@ import (
 	"github.com/marcelmue/konstrukt/cmd/gen/quadrat"
 	"github.com/marcelmue/konstrukt/cmd/gen/shining"
 	"github.com/marcelmue/konstrukt/cmd/gen/swiss16"
+	"github.com/marcelmue/konstrukt/cmd/gen/waves"
 	"github.com/marcelmue/konstrukt/cmd/gen/whitegold"
 	"github.com/marcelmue/konstrukt/cmd/gen/whitegold2"
 )
@@ -289,6 +290,20 @@ func New(config Config) (*cobra.Command, error) {
 		}
 	}
 
+	var wavesCmd *cobra.Command
+	{
+		c := waves.Config{
+			Logger: config.Logger,
+			Stderr: config.Stderr,
+			Stdout: config.Stdout,
+		}
+
+		wavesCmd, err = waves.New(c)
+		if err != nil {
+			return nil, microerror.Mask(err)
+		}
+	}
+
 	f := &flag{}
 
 	r := &runner{
@@ -324,6 +339,7 @@ func New(config Config) (*cobra.Command, error) {
 	c.AddCommand(octolinesCmd)
 	c.AddCommand(qbertCmd)
 	c.AddCommand(hourglassCmd)
+	c.AddCommand(wavesCmd)
 
 	return c, nil
 }
