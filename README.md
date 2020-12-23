@@ -481,6 +481,29 @@ konstrukt gen hourglass --color1 "#e55039" --color2 "#fa983a" --color3 "#fad390"
 
 </details>
 
+### Waves
+
+The pattern and default implementation is [MarcelMues](https://github.com/MarcelMue) work titled `waves`.
+
+<details>
+<summary>Usage examples</summary>
+
+The default can be generated with:
+```
+konstrukt gen waves
+```
+
+![waves](samples/waves.svg)
+
+Changing the colors can be easily done like this:
+```
+konstrukt gen waves --color1 "#e55039" --color2 "#ecf0f1" --color3 "#fad390"  --filename waves-ca.svg
+```
+
+![waves CA color inspiration](samples/waves-ca.svg)
+
+</details>
+
 ## Guidelines
 
 Additions to this project should follow these guidelines:
