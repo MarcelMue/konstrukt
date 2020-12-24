@@ -21,6 +21,7 @@ import (
 	"github.com/marcelmue/konstrukt/cmd/gen/octolines"
 	"github.com/marcelmue/konstrukt/cmd/gen/qbert"
 	"github.com/marcelmue/konstrukt/cmd/gen/quadrat"
+	"github.com/marcelmue/konstrukt/cmd/gen/riviera"
 	"github.com/marcelmue/konstrukt/cmd/gen/shining"
 	"github.com/marcelmue/konstrukt/cmd/gen/swiss16"
 	"github.com/marcelmue/konstrukt/cmd/gen/waves"
@@ -304,6 +305,20 @@ func New(config Config) (*cobra.Command, error) {
 		}
 	}
 
+	var rivieraCmd *cobra.Command
+	{
+		c := riviera.Config{
+			Logger: config.Logger,
+			Stderr: config.Stderr,
+			Stdout: config.Stdout,
+		}
+
+		rivieraCmd, err = riviera.New(c)
+		if err != nil {
+			return nil, microerror.Mask(err)
+		}
+	}
+
 	f := &flag{}
 
 	r := &runner{
@@ -340,6 +355,7 @@ func New(config Config) (*cobra.Command, error) {
 	c.AddCommand(qbertCmd)
 	c.AddCommand(hourglassCmd)
 	c.AddCommand(wavesCmd)
+	c.AddCommand(rivieraCmd)
 
 	return c, nil
 }
