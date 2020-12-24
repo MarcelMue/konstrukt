@@ -504,6 +504,29 @@ konstrukt gen waves --color1 "#e55039" --color2 "#ecf0f1" --color3 "#fad390"  --
 
 </details>
 
+### Riviera
+
+The pattern and default implementation is [MarcelMues](https://github.com/MarcelMue) work titled `riviera`.
+
+<details>
+<summary>Usage examples</summary>
+
+The default can be generated with:
+```
+konstrukt gen riviera
+```
+
+![riviera](samples/riviera.svg)
+
+Changing the colors can be easily done like this:
+```
+konstrukt gen riviera --color1 "#27ae60" --color2 "#2980b9" --color3 "#f1c40f"  --filename riviera-ca.svg
+```
+
+![riviera CA color inspiration](samples/riviera-ca.svg)
+
+</details>
+
 ## Guidelines
 
 Additions to this project should follow these guidelines:
