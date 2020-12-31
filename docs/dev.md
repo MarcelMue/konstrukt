@@ -1,6 +1,6 @@
 # Notes for quick development of patterns
 
-- `svgplay` allows easy setup of a quick iteration framework: https://github.com/ajstarks/svgo/blob/master/svgplay/svgplay.go
+- `svgplay` allows easy setup of a quick iteration framework: https://github.com/marcelmue/svgo/blob/master/svgplay/svgplay.go
 - Using `shift+enter` to redraw the svgs in `svgplay` prevents lag
 - Transfer content after testing into `konstrukt`
 
@@ -10,7 +10,7 @@ package main
 
 import (
 	"os"
-	"github.com/ajstarks/svgo"
+	"github.com/marcelmue/svgo"
 )
 
 func main() {
