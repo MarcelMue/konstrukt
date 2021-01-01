@@ -63,12 +63,15 @@ func (r *runner) run(ctx context.Context, cmd *cobra.Command, args []string) err
 	yp1 := []int{0, 20, 50, 80, 80, 50, 40}
 
 	canvas.Def()
-	canvas.Gid("unit")
+	canvas.Gid("shape")
 	canvas.Polygon(xp1, yp1)
+	canvas.Gend()
+	canvas.Gid("unit")
+	canvas.Use(0, 0, "#shape")
 	canvas.Gend()
 	canvas.Gid("runit")
 	canvas.ScaleXY(-1, -1)
-	canvas.Use(0, 0, "#unit")
+	canvas.Use(0, 0, "#shape")
 	canvas.Gend()
 	canvas.Gend()
 	canvas.DefEnd()

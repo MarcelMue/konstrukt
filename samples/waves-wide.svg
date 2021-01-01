@@ -6,12 +6,15 @@
 <desc>Generated with https://github.com/marcelmue/konstrukt</desc>
 <rect x="0" y="0" width="2000" height="400" style="fill:#4a69bd" />
 <defs>
-<g id="unit">
+<g id="shape">
 <polygon points="0,0 0,20 20,50 20,80 30,80 30,50 30,40" />
+</g>
+<g id="unit">
+<use x="0" y="0" xlink:href="#shape" />
 </g>
 <g id="runit">
 <g transform="scale(-1,-1)">
-<use x="0" y="0" xlink:href="#unit" />
+<use x="0" y="0" xlink:href="#shape" />
 </g>
 </g>
 </defs>
