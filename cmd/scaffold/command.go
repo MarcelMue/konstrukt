@@ -1,4 +1,4 @@
-package cmd
+package scaffold
 
 import (
 	"io"
@@ -8,17 +8,18 @@ import (
 	"github.com/giantswarm/micrologger"
 	"github.com/spf13/cobra"
 
-	"github.com/marcelmue/konstrukt/cmd/gen"
-	"github.com/marcelmue/konstrukt/cmd/scaffold"
-	"github.com/marcelmue/konstrukt/pkg/project"
+	"github.com/marcelmue/konstrukt/cmd/scaffold/pattern"
+)
+
+const (
+	name        = "scaffold"
+	description = "Scaffold files."
 )
 
 type Config struct {
 	Logger micrologger.Logger
 	Stderr io.Writer
 	Stdout io.Writer
-
-	BinaryName string
 }
 
 func New(config Config) (*cobra.Command, error) {
@@ -34,29 +35,15 @@ func New(config Config) (*cobra.Command, error) {
 
 	var err error
 
-	var genCmd *cobra.Command
+	var patternCmd *cobra.Command
 	{
-		c := gen.Config{
+		c := pattern.Config{
 			Logger: config.Logger,
 			Stderr: config.Stderr,
 			Stdout: config.Stdout,
 		}
 
-		genCmd, err = gen.New(c)
-		if err != nil {
-			return nil, microerror.Mask(err)
-		}
-	}
-
-	var scaffoldCmd *cobra.Command
-	{
-		c := scaffold.Config{
-			Logger: config.Logger,
-			Stderr: config.Stderr,
-			Stdout: config.Stdout,
-		}
-
-		scaffoldCmd, err = scaffold.New(c)
+		patternCmd, err = pattern.New(c)
 		if err != nil {
 			return nil, microerror.Mask(err)
 		}
@@ -72,17 +59,15 @@ func New(config Config) (*cobra.Command, error) {
 	}
 
 	c := &cobra.Command{
-		Use:          project.Name(),
-		Short:        project.Description(),
-		Long:         project.Description(),
-		RunE:         r.Run,
-		SilenceUsage: true,
+		Use:   name,
+		Short: description,
+		Long:  description,
+		RunE:  r.Run,
 	}
 
 	f.Init(c)
 
-	c.AddCommand(genCmd)
-	c.AddCommand(scaffoldCmd)
+	c.AddCommand(patternCmd)
 
 	return c, nil
 }
