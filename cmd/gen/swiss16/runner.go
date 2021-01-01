@@ -6,9 +6,9 @@ import (
 	"io"
 	"os"
 
-	svg "github.com/ajstarks/svgo"
 	"github.com/giantswarm/microerror"
 	"github.com/giantswarm/micrologger"
+	svg "github.com/marcelmue/svgo"
 	"github.com/spf13/cobra"
 
 	"github.com/marcelmue/konstrukt/pkg/color"
