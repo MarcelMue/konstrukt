@@ -18,6 +18,7 @@ import (
 	"github.com/marcelmue/konstrukt/cmd/gen/janein"
 	"github.com/marcelmue/konstrukt/cmd/gen/ladysweat"
 	"github.com/marcelmue/konstrukt/cmd/gen/modernhive"
+	"github.com/marcelmue/konstrukt/cmd/gen/nolock"
 	"github.com/marcelmue/konstrukt/cmd/gen/octolines"
 	"github.com/marcelmue/konstrukt/cmd/gen/qbert"
 	"github.com/marcelmue/konstrukt/cmd/gen/quadrat"
@@ -319,6 +320,20 @@ func New(config Config) (*cobra.Command, error) {
 		}
 	}
 
+	var nolockCmd *cobra.Command
+	{
+		c := nolock.Config{
+			Logger: config.Logger,
+			Stderr: config.Stderr,
+			Stdout: config.Stdout,
+		}
+
+		nolockCmd, err = nolock.New(c)
+		if err != nil {
+			return nil, microerror.Mask(err)
+		}
+	}
+
 	f := &flag{}
 
 	r := &runner{
@@ -356,6 +371,7 @@ func New(config Config) (*cobra.Command, error) {
 	c.AddCommand(hourglassCmd)
 	c.AddCommand(wavesCmd)
 	c.AddCommand(rivieraCmd)
+	c.AddCommand(nolockCmd)
 
 	return c, nil
 }
