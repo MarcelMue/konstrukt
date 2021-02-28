@@ -527,6 +527,29 @@ konstrukt gen riviera --color1 "#27ae60" --color2 "#2980b9" --color3 "#f1c40f"  
 
 </details>
 
+### Nolock
+
+The pattern and default implementation is [MarcelMues](https://github.com/MarcelMue) work titled `nolock`.
+
+<details>
+<summary>Usage examples</summary>
+
+The default can be generated with:
+```
+konstrukt gen nolock
+```
+
+![nolock](samples/nolock.svg)
+
+Changing the colors can be easily done like this:
+```
+konstrukt gen riviera --color1 "#6a89cc" --color2 "#f6b93b" --color3 "#9b59b6"  --filename nolock-ca.svg
+```
+
+![nolock CA color inspiration](samples/nolock-ca.svg)
+
+</details>
+
 ## Guidelines
 
 Additions to this project should follow these guidelines:
