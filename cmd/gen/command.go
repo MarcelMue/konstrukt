@@ -20,6 +20,7 @@ import (
 	"github.com/marcelmue/konstrukt/cmd/gen/modernhive"
 	"github.com/marcelmue/konstrukt/cmd/gen/nolock"
 	"github.com/marcelmue/konstrukt/cmd/gen/octolines"
+	"github.com/marcelmue/konstrukt/cmd/gen/pantheon"
 	"github.com/marcelmue/konstrukt/cmd/gen/qbert"
 	"github.com/marcelmue/konstrukt/cmd/gen/quadrat"
 	"github.com/marcelmue/konstrukt/cmd/gen/riviera"
@@ -334,6 +335,20 @@ func New(config Config) (*cobra.Command, error) {
 		}
 	}
 
+	var pantheonCmd *cobra.Command
+	{
+		c := pantheon.Config{
+			Logger: config.Logger,
+			Stderr: config.Stderr,
+			Stdout: config.Stdout,
+		}
+
+		pantheonCmd, err = pantheon.New(c)
+		if err != nil {
+			return nil, microerror.Mask(err)
+		}
+	}
+
 	f := &flag{}
 
 	r := &runner{
@@ -372,6 +387,7 @@ func New(config Config) (*cobra.Command, error) {
 	c.AddCommand(wavesCmd)
 	c.AddCommand(rivieraCmd)
 	c.AddCommand(nolockCmd)
+	c.AddCommand(pantheonCmd)
 
 	return c, nil
 }
