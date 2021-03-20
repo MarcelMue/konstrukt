@@ -566,10 +566,10 @@ konstrukt gen pantheon
 
 Changing the colors can be easily done like this:
 ```
-konstrukt gen pantheon --color1 "#bdc3c7" --color2 "#f6b93b" --color3 "#6a89cc"  --filename nolock-ca.svg
+konstrukt gen pantheon --color1 "#bdc3c7" --color2 "#f6b93b" --color3 "#6a89cc"  --filename pantheon-au.svg
 ```
 
-![pantheon CA color inspiration](samples/pantheon-ca.svg)
+![pantheon CA color inspiration](samples/pantheon-au.svg)
 
 </details>
 
