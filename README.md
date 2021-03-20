@@ -543,10 +543,33 @@ konstrukt gen nolock
 
 Changing the colors can be easily done like this:
 ```
-konstrukt gen riviera --color1 "#6a89cc" --color2 "#f6b93b" --color3 "#9b59b6"  --filename nolock-ca.svg
+konstrukt gen nolock --color1 "#6a89cc" --color2 "#f6b93b" --color3 "#9b59b6"  --filename nolock-ca.svg
 ```
 
 ![nolock CA color inspiration](samples/nolock-ca.svg)
+
+</details>
+
+### Pantheon
+
+The pattern and default implementation is [MarcelMues](https://github.com/MarcelMue) work titled `pantheon`.
+
+<details>
+<summary>Usage examples</summary>
+
+The default can be generated with:
+```
+konstrukt gen pantheon
+```
+
+![pantheon](samples/pantheon.svg)
+
+Changing the colors can be easily done like this:
+```
+konstrukt gen pantheon --color1 "#bdc3c7" --color2 "#f6b93b" --color3 "#6a89cc"  --filename pantheon-au.svg
+```
+
+![pantheon CA color inspiration](samples/pantheon-au.svg)
 
 </details>
 
