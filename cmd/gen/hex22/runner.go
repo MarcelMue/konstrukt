@@ -66,34 +66,45 @@ func (r *runner) run(ctx context.Context, cmd *cobra.Command, args []string) err
 	xp2 := []int{0, 0, -35, -35}
 	yp2 := []int{20, 100, 80, 0}
 
-	canvas.Def()
-	canvas.Gid("block")
-	canvas.Polygon(xp1, yp1)
-	canvas.Gend()
-	canvas.Gid("mirrorblock")
-	canvas.Polygon(xp2, yp2)
-	canvas.Gend()
+	canvas.Def(func() {
+		canvas.Gid("block", func() {
+			canvas.Polygon(xp1, yp1)
+		})
+		canvas.Gid("mirrorblock", func() {
+			canvas.Polygon(xp2, yp2)
+		})
 
-	canvas.Gid("full")
-	for y := 0; y < 2; y += 1 {
-		canvas.Use(0, 0, "#block", "fill:"+c3)
-		canvas.Use(0, 0, "#mirrorblock", "fill:"+c2)
-		canvas.RotateTranslate(-18, -70, 180/3)
-		canvas.Use(0, 0, "#block", "fill:"+c4)
-		canvas.Use(0, 0, "#mirrorblock", "fill:"+c3)
-		canvas.RotateTranslate(-18, -70, 180/3)
-		canvas.Use(0, 0, "#block", "fill:"+c2)
-		canvas.Use(0, 0, "#mirrorblock", "fill:"+c4)
-		canvas.RotateTranslate(-18, -70, 180/3)
-	}
-	canvas.Gend()
-	canvas.Gend()
-	canvas.Gend()
-	canvas.Gend()
-	canvas.Gend()
-	canvas.Gend()
-	canvas.Gend()
-	canvas.DefEnd()
+		canvas.Gid("full", func() {
+			transx := -18
+			transy := -70
+			rotate := float64(60)
+
+			// Build up actual structure.
+			canvas.Use(0, 0, "#block", "fill:"+c3)
+			canvas.Use(0, 0, "#mirrorblock", "fill:"+c2)
+			canvas.RotateTranslate(transx, transy, rotate, func() {
+				canvas.Use(0, 0, "#block", "fill:"+c4)
+				canvas.Use(0, 0, "#mirrorblock", "fill:"+c3)
+				canvas.RotateTranslate(transx, transy, rotate, func() {
+					canvas.Use(0, 0, "#block", "fill:"+c2)
+					canvas.Use(0, 0, "#mirrorblock", "fill:"+c4)
+					canvas.RotateTranslate(transx, transy, rotate, func() {
+						canvas.Use(0, 0, "#block", "fill:"+c3)
+						canvas.Use(0, 0, "#mirrorblock", "fill:"+c2)
+						canvas.RotateTranslate(transx, transy, rotate, func() {
+							canvas.Use(0, 0, "#block", "fill:"+c4)
+							canvas.Use(0, 0, "#mirrorblock", "fill:"+c3)
+							canvas.RotateTranslate(transx, transy, rotate, func() {
+								canvas.Use(0, 0, "#block", "fill:"+c2)
+								canvas.Use(0, 0, "#mirrorblock", "fill:"+c4)
+							})
+						})
+					})
+				})
+			})
+		})
+
+	})
 
 	for y := -200; y < height+80; y += 243 {
 		xpositioncounter := 0
