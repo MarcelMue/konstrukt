@@ -178,8 +178,8 @@ github.com/lightstep/lightstep-tracer-common/golang/gogo v0.0.0-20190605223551-b
 github.com/lightstep/lightstep-tracer-go v0.18.1/go.mod h1:jlF1pusYV4pidLvZ+XD0UBX0ZE6WURAspgAczcDHrL4=
 github.com/lyft/protoc-gen-validate v0.0.13/go.mod h1:XbGvPuh87YZc5TdIa2/I4pLk0QoUACkjt2znoq26NVQ=
 github.com/magiconair/properties v1.8.1/go.mod h1:PppfXfuXeibc/6YijjN8zIbojt8czPbwD3XqdrwzmxQ=
-github.com/marcelmue/svgo v0.0.0-20210509204329-0eaeba321096 h1:lHoumoPaJ0MVuV00b2QG6CLIe/47w6aIcsQfNuS718E=
-github.com/marcelmue/svgo v0.0.0-20210509204329-0eaeba321096/go.mod h1:Z7F7wusH5l8M3tKuIhS80XvtWC2XOJNKHxWMSfPQYO0=
+github.com/marcelmue/svgo v0.0.1 h1:B4DTbdmh9HJ5IllfKs6/5DQrbF4tnyZz33YGKHIWD6Y=
+github.com/marcelmue/svgo v0.0.1/go.mod h1:Z7F7wusH5l8M3tKuIhS80XvtWC2XOJNKHxWMSfPQYO0=
 github.com/mattn/go-colorable v0.0.9/go.mod h1:9vuHe8Xs5qXnSaW/c/ABM9alt+Vo+STaOChaDxuIBZU=
 github.com/mattn/go-isatty v0.0.3/go.mod h1:M+lRXTBqGeGNdLjl/ufCoiOlB5xdOkqRJdNxMWT7Zi4=
 github.com/mattn/go-isatty v0.0.4/go.mod h1:M+lRXTBqGeGNdLjl/ufCoiOlB5xdOkqRJdNxMWT7Zi4=
