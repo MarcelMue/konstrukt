@@ -72,13 +72,13 @@ func (r *runner) run(ctx context.Context, cmd *cobra.Command, args []string) err
 	xp3 := []int{60, 100}
 	yp3 := []int{100, 60}
 
-	canvas.Def()
-	canvas.Gid("unit")
-	canvas.Polyline(xp1, yp1, fmt.Sprintf(stylefmt, c2, 5))
-	canvas.Polyline(xp2, yp2, fmt.Sprintf(stylefmt, c3, 5))
-	canvas.Polyline(xp3, yp3, fmt.Sprintf(stylefmt, c3, 5))
-	canvas.Gend()
-	canvas.DefEnd()
+	canvas.Def(func() {
+		canvas.Gid("unit", func() {
+			canvas.Polyline(xp1, yp1, fmt.Sprintf(stylefmt, c2, 5))
+			canvas.Polyline(xp2, yp2, fmt.Sprintf(stylefmt, c3, 5))
+			canvas.Polyline(xp3, yp3, fmt.Sprintf(stylefmt, c3, 5))
+		})
+	})
 
 	for y := -80; y < height+200; y += 100 {
 		for x := -80; x < width+200; x += 100 {

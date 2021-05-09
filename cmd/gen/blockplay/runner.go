@@ -73,30 +73,31 @@ func (r *runner) run(ctx context.Context, cmd *cobra.Command, args []string) err
 	xp5 := []int{29, 29, 50}
 	yp5 := []int{27, 47, 47}
 
-	canvas.Def()
-	canvas.Gid("unit")
-	canvas.Polygon(xp1, yp1, "fill:"+c2)
-	canvas.Polygon(xp2, yp2, "fill:"+c2)
-	canvas.Polygon(xp3, yp3, "fill:"+c2)
-	canvas.Polygon(xp4, yp4, "fill:"+c2)
-	canvas.Polygon(xp5, yp5, "fill:"+c2)
-	canvas.Gend()
-	canvas.Gid("runit")
-	canvas.ScaleXY(1, -1)
-	canvas.Use(0, 10, "#unit")
-	canvas.Gend()
-	canvas.Gend()
-	canvas.Gid("r2unit")
-	canvas.ScaleXY(-1, 1)
-	canvas.Use(10, 0, "#unit")
-	canvas.Gend()
-	canvas.Gend()
-	canvas.Gid("r3unit")
-	canvas.ScaleXY(-1, 1)
-	canvas.Use(10, 0, "#runit")
-	canvas.Gend()
-	canvas.Gend()
-	canvas.DefEnd()
+	canvas.Def(func() {
+		canvas.Gid("unit", func() {
+			canvas.Polygon(xp1, yp1, "fill:"+c2)
+			canvas.Polygon(xp2, yp2, "fill:"+c2)
+			canvas.Polygon(xp3, yp3, "fill:"+c2)
+			canvas.Polygon(xp4, yp4, "fill:"+c2)
+			canvas.Polygon(xp5, yp5, "fill:"+c2)
+		})
+		canvas.Gid("runit", func() {
+			canvas.ScaleXY(1, -1, func() {
+				canvas.Use(0, 10, "#unit")
+			})
+		})
+		canvas.Gid("r2unit", func() {
+			canvas.ScaleXY(-1, 1, func() {
+				canvas.Use(10, 0, "#unit")
+			})
+		})
+		canvas.Gid("r3unit", func() {
+			canvas.ScaleXY(-1, 1, func() {
+				canvas.Use(10, 0, "#runit")
+			})
+
+		})
+	})
 
 	for y := -220; y < height+200; y += 220 {
 		for x := -140; x < width+200; x += 140 {

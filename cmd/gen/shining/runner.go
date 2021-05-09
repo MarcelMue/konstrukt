@@ -62,27 +62,28 @@ func (r *runner) run(ctx context.Context, cmd *cobra.Command, args []string) err
 	canvas.Start(width, height)
 	canvas.Desc(project.PatternDesc())
 
-	canvas.Def()
-	canvas.Gid("unit")
-	canvas.Polyline(xl, yl, "fill:none")
-	canvas.Polygon(xp, yp)
-	canvas.Gend()
-	canvas.Gid("runit")
-	canvas.TranslateRotate(150, 180, 180)
-	canvas.Use(0, 0, "#unit")
-	canvas.Gend()
-	canvas.Gend()
-	canvas.DefEnd()
+	canvas.Def(func() {
+		canvas.Gid("unit", func() {
+			canvas.Polyline(xl, yl, "fill:none")
+			canvas.Polygon(xp, yp)
+		})
+		canvas.Gid("runit", func() {
+			canvas.TranslateRotate(150, 180, 180, func() {
+				canvas.Use(0, 0, "#unit")
+			})
+		})
+	})
 
 	canvas.Rect(0, 0, width, height, "fill:"+r.flag.Color2)
-	canvas.Gstyle(fmt.Sprintf(stylefmt, r.flag.Color3, 12, r.flag.Color1))
-	for y := -33; y < height; y += 130 {
-		for x := -50; x < width; x += 100 {
-			canvas.Use(x, y, "#unit")
-			canvas.Use(x, y, "#runit")
+	canvas.Gstyle(fmt.Sprintf(stylefmt, r.flag.Color3, 12, r.flag.Color1), func() {
+		for y := -33; y < height; y += 130 {
+			for x := -50; x < width; x += 100 {
+				canvas.Use(x, y, "#unit")
+				canvas.Use(x, y, "#runit")
+			}
 		}
-	}
-	canvas.Gend()
+	})
+
 	canvas.End()
 
 	return nil

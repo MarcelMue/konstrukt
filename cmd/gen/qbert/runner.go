@@ -68,20 +68,20 @@ func (r *runner) run(ctx context.Context, cmd *cobra.Command, args []string) err
 	// Left Rhombus
 	xpLeft := []int{0, 0, patternWidthHalf, patternWidthHalf}
 	ypLeft := []int{patternHeightThird, patternHeight, patternHeightFrac, 0}
-	canvas.Def()
-	canvas.Gid("left")
-	canvas.Polygon(xpLeft, ypLeft)
-	canvas.Gend()
-	canvas.DefEnd()
+	canvas.Def(func() {
+		canvas.Gid("left", func() {
+			canvas.Polygon(xpLeft, ypLeft)
+		})
+	})
 
 	// Right Rhombus
 	xpRight := []int{0, 0, patternWidthHalf, patternWidthHalf}
 	ypRight := []int{0, patternHeightFrac, patternHeight, patternHeightThird}
-	canvas.Def()
-	canvas.Gid("right")
-	canvas.Polygon(xpRight, ypRight)
-	canvas.Gend()
-	canvas.DefEnd()
+	canvas.Def(func() {
+		canvas.Gid("right", func() {
+			canvas.Polygon(xpRight, ypRight)
+		})
+	})
 
 	canvas.Rect(0, 0, width, height, "fill:"+c1)
 

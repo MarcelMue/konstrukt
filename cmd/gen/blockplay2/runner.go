@@ -74,20 +74,20 @@ func (r *runner) run(ctx context.Context, cmd *cobra.Command, args []string) err
 	xp5 := []int{29, 29, 50}
 	yp5 := []int{27, 47, 47}
 
-	canvas.Def()
-	canvas.Gid("unit")
-	canvas.Polygon(xp1, yp1)
-	canvas.Polygon(xp2, yp2)
-	canvas.Polygon(xp3, yp3)
-	canvas.Polygon(xp4, yp4)
-	canvas.Polygon(xp5, yp5)
-	canvas.Gend()
-	canvas.Gid("runit")
-	canvas.ScaleXY(-1, -1)
-	canvas.Use(0, -45, "#unit")
-	canvas.Gend()
-	canvas.Gend()
-	canvas.DefEnd()
+	canvas.Def(func() {
+		canvas.Gid("unit", func() {
+			canvas.Polygon(xp1, yp1)
+			canvas.Polygon(xp2, yp2)
+			canvas.Polygon(xp3, yp3)
+			canvas.Polygon(xp4, yp4)
+			canvas.Polygon(xp5, yp5)
+		})
+		canvas.Gid("runit", func() {
+			canvas.ScaleXY(-1, -1, func() {
+				canvas.Use(0, -45, "#unit")
+			})
+		})
+	})
 
 	ypositioncounter := 0
 	for y := -100; y < height+200; y += 155 {

@@ -30,8 +30,6 @@
 <g transform="rotate(60) translate(-18,-70)">
 <use x="0" y="0" xlink:href="#block" style="fill:#1e3799" />
 <use x="0" y="0" xlink:href="#mirrorblock" style="fill:#ecf0f1" />
-<g transform="rotate(60) translate(-18,-70)">
-</g>
 </g>
 </g>
 </g>

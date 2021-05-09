@@ -63,16 +63,16 @@ func (r *runner) run(ctx context.Context, cmd *cobra.Command, args []string) err
 	xp := []int{0, 20, 100, 60, 40, 60}
 	yp := []int{20, 0, 80, 120, 100, 80}
 
-	canvas.Def()
-	canvas.Gid("unit")
-	canvas.Polygon(xp, yp)
-	canvas.Gend()
-	canvas.Gid("runit")
-	canvas.TranslateRotate(40, 160, 180)
-	canvas.Use(0, 0, "#unit")
-	canvas.Gend()
-	canvas.Gend()
-	canvas.DefEnd()
+	canvas.Def(func() {
+		canvas.Gid("unit", func() {
+			canvas.Polygon(xp, yp)
+		})
+		canvas.Gid("runit", func() {
+			canvas.TranslateRotate(40, 160, 180, func() {
+				canvas.Use(0, 0, "#unit")
+			})
+		})
+	})
 
 	ypositioncounter := 0
 	for y := -80; y < height+80; y += 80 {

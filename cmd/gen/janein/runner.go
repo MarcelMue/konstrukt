@@ -56,11 +56,11 @@ func (r *runner) run(ctx context.Context, cmd *cobra.Command, args []string) err
 	canvas.Start(width, height)
 	canvas.Desc(project.PatternDesc())
 
-	canvas.Def()
-	canvas.Gid("unit")
-	canvas.Rect(0, 0, 60, 20)
-	canvas.Gend()
-	canvas.DefEnd()
+	canvas.Def(func() {
+		canvas.Gid("unit", func() {
+			canvas.Rect(0, 0, 60, 20)
+		})
+	})
 
 	for x := -60; x < width+80; x += 80 {
 		xpositioncounter := 0

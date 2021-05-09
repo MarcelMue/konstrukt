@@ -62,16 +62,16 @@ func (r *runner) run(ctx context.Context, cmd *cobra.Command, args []string) err
 	xpl := []int{20, 0, -20, -20, 0, 20}
 	ypl := []int{15, 0, 15, 60, 75, 60}
 
-	canvas.Def()
-	canvas.Gid("unit")
-	canvas.Polyline(xpl, ypl, "fill:none")
-	canvas.Gend()
-	canvas.Gid("runit")
-	canvas.TranslateRotate(0, 100, 180)
-	canvas.Use(0, 0, "#unit")
-	canvas.Gend()
-	canvas.Gend()
-	canvas.DefEnd()
+	canvas.Def(func() {
+		canvas.Gid("unit", func() {
+			canvas.Polyline(xpl, ypl, "fill:none")
+		})
+		canvas.Gid("runit", func() {
+			canvas.TranslateRotate(0, 100, 180, func() {
+				canvas.Use(0, 0, "#unit")
+			})
+		})
+	})
 
 	offset := (width + height) / 2
 	ypositioncounter := 0
