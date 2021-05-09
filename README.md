@@ -573,6 +573,29 @@ konstrukt gen pantheon --color1 "#bdc3c7" --color2 "#f6b93b" --color3 "#6a89cc" 
 
 </details>
 
+### Hex22
+
+The pattern and default implementation is [MarcelMues](https://github.com/MarcelMue) work titled `hex22`.
+
+<details>
+<summary>Usage examples</summary>
+
+The default can be generated with:
+```
+konstrukt gen hex22
+```
+
+![hex22](samples/hex22.svg)
+
+Changing the colors can be easily done like this:
+```
+konstrukt gen hex22 --color1 "#e74c3c" --color2 "#1e3799" --color3 "#82ccdd" --color4 "#ecf0f1"  --filename hex22-cv.svg
+```
+
+![hex22 CV color inspiration](samples/hex22-cv.svg)
+
+</details>
+
 ## Guidelines
 
 Additions to this project should follow these guidelines:

@@ -12,6 +12,7 @@ import (
 	"github.com/marcelmue/konstrukt/cmd/gen/blockplay2"
 	"github.com/marcelmue/konstrukt/cmd/gen/fallingdaggers"
 	"github.com/marcelmue/konstrukt/cmd/gen/fiftyfive"
+	"github.com/marcelmue/konstrukt/cmd/gen/hex22"
 	"github.com/marcelmue/konstrukt/cmd/gen/hourglass"
 	"github.com/marcelmue/konstrukt/cmd/gen/interlocking"
 	"github.com/marcelmue/konstrukt/cmd/gen/interruptions"
@@ -349,6 +350,20 @@ func New(config Config) (*cobra.Command, error) {
 		}
 	}
 
+	var hex22Cmd *cobra.Command
+	{
+		c := hex22.Config{
+			Logger: config.Logger,
+			Stderr: config.Stderr,
+			Stdout: config.Stdout,
+		}
+
+		hex22Cmd, err = hex22.New(c)
+		if err != nil {
+			return nil, microerror.Mask(err)
+		}
+	}
+
 	f := &flag{}
 
 	r := &runner{
@@ -388,6 +403,7 @@ func New(config Config) (*cobra.Command, error) {
 	c.AddCommand(rivieraCmd)
 	c.AddCommand(nolockCmd)
 	c.AddCommand(pantheonCmd)
+	c.AddCommand(hex22Cmd)
 
 	return c, nil
 }
