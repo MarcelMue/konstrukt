@@ -10,6 +10,7 @@ import (
 
 	"github.com/marcelmue/konstrukt/cmd/gen/blockplay"
 	"github.com/marcelmue/konstrukt/cmd/gen/blockplay2"
+	"github.com/marcelmue/konstrukt/cmd/gen/euphonic"
 	"github.com/marcelmue/konstrukt/cmd/gen/fallingdaggers"
 	"github.com/marcelmue/konstrukt/cmd/gen/fiftyfive"
 	"github.com/marcelmue/konstrukt/cmd/gen/hex22"
@@ -364,6 +365,20 @@ func New(config Config) (*cobra.Command, error) {
 		}
 	}
 
+	var euphonicCmd *cobra.Command
+	{
+		c := euphonic.Config{
+			Logger: config.Logger,
+			Stderr: config.Stderr,
+			Stdout: config.Stdout,
+		}
+
+		euphonicCmd, err = euphonic.New(c)
+		if err != nil {
+			return nil, microerror.Mask(err)
+		}
+	}
+
 	f := &flag{}
 
 	r := &runner{
@@ -404,6 +419,7 @@ func New(config Config) (*cobra.Command, error) {
 	c.AddCommand(nolockCmd)
 	c.AddCommand(pantheonCmd)
 	c.AddCommand(hex22Cmd)
+	c.AddCommand(euphonicCmd)
 
 	return c, nil
 }
