@@ -598,7 +598,7 @@ konstrukt gen hex22 --color1 "#e74c3c" --color2 "#1e3799" --color3 "#82ccdd" --c
 
 ### Euphonic
 
-The pattern and default implementation is [MarcelMues](https://github.com/MarcelMue) work titled `euphonic`.
+The pattern is inspired by `johal_geometrics` work title `Euphonic Colour No. 8` and implemented by [MarcelMues](https://github.com/MarcelMue).
 
 <details>
 <summary>Usage examples</summary>
@@ -612,7 +612,7 @@ konstrukt gen euphonic
 
 Changing the colors can be easily done like this:
 ```
-konstrukt gen euphonic --color1 "#e74c3c" --color2 "#1e3799" --color3 "#82ccdd" --color4 "#ecf0f1"  --filename euphonic-cv.svg
+konstrukt gen euphonic --color1 "#2980b9" --color2 "#2c3e50" --color3 "#e58e26" --color4 "#d35400" --color5 "#f6b93b" --color6 "#0c2461" --filename euphonic-cv.svg
 ```
 
 ![euphonic CV color inspiration](samples/euphonic-cv.svg)
