@@ -38,7 +38,7 @@ func (r *runner) Run(cmd *cobra.Command, args []string) error {
 		r.flag.Color4 = color.Random()
 		r.flag.Color5 = color.Random()
 		r.flag.Color6 = color.Random()
-		fmt.Printf("Set Color1:%s Color2:%s Color3:%s Color4:%s Color4:%s Color4:%s\n", r.flag.Color1, r.flag.Color2, r.flag.Color3, r.flag.Color4, r.flag.Color5, r.flag.Color6)
+		fmt.Printf("Set Color1:%s Color2:%s Color3:%s Color4:%s Color5:%s Color6:%s\n", r.flag.Color1, r.flag.Color2, r.flag.Color3, r.flag.Color4, r.flag.Color5, r.flag.Color6)
 	}
 
 	err = r.run(ctx, cmd, args)
