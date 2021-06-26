@@ -31,6 +31,7 @@ import (
 	"github.com/marcelmue/konstrukt/cmd/gen/waves"
 	"github.com/marcelmue/konstrukt/cmd/gen/whitegold"
 	"github.com/marcelmue/konstrukt/cmd/gen/whitegold2"
+	"github.com/marcelmue/konstrukt/cmd/gen/woozoo"
 )
 
 const (
@@ -379,6 +380,20 @@ func New(config Config) (*cobra.Command, error) {
 		}
 	}
 
+	var woozooCmd *cobra.Command
+	{
+		c := woozoo.Config{
+			Logger: config.Logger,
+			Stderr: config.Stderr,
+			Stdout: config.Stdout,
+		}
+
+		woozooCmd, err = woozoo.New(c)
+		if err != nil {
+			return nil, microerror.Mask(err)
+		}
+	}
+
 	f := &flag{}
 
 	r := &runner{
@@ -420,6 +435,7 @@ func New(config Config) (*cobra.Command, error) {
 	c.AddCommand(pantheonCmd)
 	c.AddCommand(hex22Cmd)
 	c.AddCommand(euphonicCmd)
+	c.AddCommand(woozooCmd)
 
 	return c, nil
 }
