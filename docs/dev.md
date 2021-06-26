@@ -9,34 +9,34 @@ Sample which can be easily transformed to fit into `konstrukt`:
 package main
 
 import (
-	"os"
-	"github.com/marcelmue/svgo"
+  "os"
+  "github.com/marcelmue/svgo"
 )
 
 func main() {
-	canvas := svg.New(os.Stdout)
-	width := 500
-	height := 500
-	c1, c2 := "#ffffff", "#000000"
+  canvas := svg.New(os.Stdout)
+  width := 500
+  height := 500
+  c1, c2 := "#ffffff", "#000000"
 
-	canvas.Start(width, height)
-	canvas.Rect(0, 0, width, height, "fill:"+c1)
+  canvas.Start(width, height)
+  canvas.Rect(0, 0, width, height, "fill:"+c1)
 
-	// Triangle.
-	xp1 := []int{0, 0, 50}
-	yp1 := []int{50, 100, 100}
+  // Triangle.
+  xp1 := []int{0, 0, 50}
+  yp1 := []int{50, 100, 100}
 
-	canvas.Def()
-	canvas.Gid("unit")
-	canvas.Polygon(xp1, yp1,"fill:"+c2)
-	canvas.Gend()
-	canvas.DefEnd()
+  canvas.Def(func() {
+    canvas.Gid("unit", func() {
+            canvas.Polygon(xp1, yp1,"fill:"+c2)
+    })
+  })
 
-	for y := -100; y < height+200; y += 155 {
-		for x := -120; x < width+200; x += 120 {
-			canvas.Use(x, y, "#unit")
-		}
-	}
-	canvas.End()
+  for y := -100; y < height+200; y += 155 {
+    for x := -120; x < width+200; x += 120 {
+      canvas.Use(x, y, "#unit")
+    }
+  }
+  canvas.End()
 }
 ```
