@@ -619,6 +619,29 @@ konstrukt gen euphonic --color1 "#2980b9" --color2 "#2c3e50" --color3 "#e58e26" 
 
 </details>
 
+### Woozoo
+
+The pattern and default implementation is [MarcelMues](https://github.com/MarcelMue) work titled `woozoo`.
+
+<details>
+<summary>Usage examples</summary>
+
+The default can be generated with:
+```
+konstrukt gen woozoo
+```
+
+![woozoo](samples/woozoo.svg)
+
+Changing the colors can be easily done like this:
+```
+konstrukt gen woozoo --color1 "#079992" --color2 "#ecf0f1" --color3 "#0c2461" --filename woozoo-cv.svg
+```
+
+![woozoo CV color inspiration](samples/woozoo-cv.svg)
+
+</details>
+
 ## Guidelines
 
 Additions to this project should follow these guidelines:
