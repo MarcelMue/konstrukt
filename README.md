@@ -642,6 +642,29 @@ konstrukt gen woozoo --color1 "#079992" --color2 "#ecf0f1" --color3 "#0c2461" --
 
 </details>
 
+### Triangles
+
+The pattern and default implementation is [MarcelMues](https://github.com/MarcelMue) work titled `triangles`.
+
+<details>
+<summary>Usage examples</summary>
+
+The default can be generated with:
+```
+konstrukt gen triangles
+```
+
+![triangles](samples/triangles.svg)
+
+Changing the colors can be easily done like this:
+```
+konstrukt gen triangles --color1 "#079992" --color2 "#ecf0f1" --color3 "#0c2461" --filename triangles-ca.svg
+```
+
+![triangles CA color inspiration](samples/triangles-ca.svg)
+
+</details>
+
 ## Guidelines
 
 Additions to this project should follow these guidelines:

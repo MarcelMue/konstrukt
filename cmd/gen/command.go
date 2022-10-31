@@ -28,6 +28,7 @@ import (
 	"github.com/marcelmue/konstrukt/cmd/gen/riviera"
 	"github.com/marcelmue/konstrukt/cmd/gen/shining"
 	"github.com/marcelmue/konstrukt/cmd/gen/swiss16"
+	"github.com/marcelmue/konstrukt/cmd/gen/triangles"
 	"github.com/marcelmue/konstrukt/cmd/gen/waves"
 	"github.com/marcelmue/konstrukt/cmd/gen/whitegold"
 	"github.com/marcelmue/konstrukt/cmd/gen/whitegold2"
@@ -394,6 +395,20 @@ func New(config Config) (*cobra.Command, error) {
 		}
 	}
 
+	var trianglesCmd *cobra.Command
+	{
+		c := triangles.Config{
+			Logger: config.Logger,
+			Stderr: config.Stderr,
+			Stdout: config.Stdout,
+		}
+
+		trianglesCmd, err = triangles.New(c)
+		if err != nil {
+			return nil, microerror.Mask(err)
+		}
+	}
+
 	f := &flag{}
 
 	r := &runner{
@@ -436,6 +451,7 @@ func New(config Config) (*cobra.Command, error) {
 	c.AddCommand(hex22Cmd)
 	c.AddCommand(euphonicCmd)
 	c.AddCommand(woozooCmd)
+	c.AddCommand(trianglesCmd)
 
 	return c, nil
 }
