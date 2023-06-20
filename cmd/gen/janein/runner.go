@@ -56,29 +56,24 @@ func (r *runner) run(ctx context.Context, cmd *cobra.Command, args []string) err
 	canvas.Start(width, height)
 	canvas.Desc(project.PatternDesc())
 
+	canvas.Rect(0, 0, width, height, "fill:"+c1)
+	// Polygon.
+	xp1 := []int{0, 0, 60, 60, 40, 40}
+	yp1 := []int{0, 20, 20, -20, -20, 0}
+
 	canvas.Def(func() {
 		canvas.Gid("unit", func() {
-			canvas.Rect(0, 0, 60, 20)
+			canvas.Polygon(xp1, yp1)
 		})
 	})
 
-	for x := -60; x < width+80; x += 80 {
+	for x := -40; x < width+80; x += 80 {
 		xpositioncounter := 0
 		for y := -40; y < height+20; y += 20 {
-			if xpositioncounter%4 == 0 {
-				canvas.Rect(x, y, 80, 20, "fill: "+c2)
-				canvas.Use(x, y, "#unit", "fill:"+c1)
-			}
 			if xpositioncounter%4 == 1 {
-				canvas.Rect(x+20, y, 80, 20, "fill: "+c1)
 				canvas.Use(x+20, y, "#unit", "fill:"+c2)
 			}
-			if xpositioncounter%4 == 2 {
-				canvas.Rect(x+40, y, 80, 20, "fill: "+c2)
-				canvas.Use(x+40, y, "#unit", "fill:"+c1)
-			}
 			if xpositioncounter%4 == 3 {
-				canvas.Rect(x+60, y, 80, 20, "fill: "+c1)
 				canvas.Use(x+60, y, "#unit", "fill:"+c2)
 			}
 			xpositioncounter++
